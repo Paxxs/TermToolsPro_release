@@ -1,0 +1,19 @@
+version: "1"
+global:
+  shell: "default" # 自定义 shell 路径
+
+TermRecord:
+  enable: false # 启用后会隐藏提示，并且文件会报错至 SavePath
+  SavePath: "" # 确保目录有可读写权限
+
+FakeTerm:
+  enable: true
+  replace: # 实时替换
+    - old: "fish"
+      new: "鱼"
+    - old: "shell"
+      new: "贝壳"
+
+ReplayTheTerm:
+  speed: 1.0 # 倍速备份
+
