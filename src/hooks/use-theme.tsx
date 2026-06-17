@@ -9,24 +9,55 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light")
+function getSystemTheme(): Theme {
+  if (typeof window === "undefined") return "light"
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light"
+}
 
+function getStoredTheme(): Theme | null {
+  if (typeof window === "undefined") return null
+  const stored = localStorage.getItem("theme")
+  if (stored === "light" || stored === "dark") return stored
+  return null
+}
+
+function applyTheme(theme: Theme) {
+  document.documentElement.classList.remove("light", "dark")
+  document.documentElement.classList.add(theme)
+  document.documentElement.setAttribute("data-theme", theme)
+  document.documentElement.style.colorScheme = theme
+}
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Initialize from stored value or system preference
+    return getStoredTheme() || getSystemTheme()
+  })
+
+  // Apply theme on mount and when it changes
   useEffect(() => {
-    const stored = localStorage.getItem("theme") as Theme | null
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches
-    const initialTheme = stored || (prefersDark ? "dark" : "light")
-    setTheme(initialTheme)
-    document.documentElement.setAttribute("data-theme", initialTheme)
+    applyTheme(theme)
+  }, [theme])
+
+  // Listen to system theme changes if no stored preference
+  useEffect(() => {
+    if (getStoredTheme()) return // Don't listen if user has set a preference
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    const handleChange = (e: MediaQueryListEvent) => {
+      setTheme(e.matches ? "dark" : "light")
+    }
+
+    mediaQuery.addEventListener("change", handleChange)
+    return () => mediaQuery.removeEventListener("change", handleChange)
   }, [])
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light"
     setTheme(newTheme)
     localStorage.setItem("theme", newTheme)
-    document.documentElement.setAttribute("data-theme", newTheme)
   }
 
   return (
