@@ -1,14 +1,26 @@
 import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import type { VariantProps } from "class-variance-authority"
+import { cva } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
 const Slot = React.forwardRef<
   HTMLElement,
   React.HTMLAttributes<HTMLElement> & { asChild?: boolean }
->(({ asChild, ...props }, ref) => {
+>(({ asChild, children, ...props }, ref) => {
+  if (asChild && React.isValidElement(children)) {
+    return React.cloneElement(
+      children as React.ReactElement<React.HTMLAttributes<HTMLElement>>,
+      { ...props, ref } as any
+    )
+  }
+
   const Comp = asChild ? "span" : "button"
-  return <Comp ref={ref as any} {...props} />
+  return (
+    <Comp ref={ref as any} {...props}>
+      {children}
+    </Comp>
+  )
 })
 
 const buttonVariants = cva(
@@ -55,7 +67,7 @@ function Button({
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
   }) {
-  const Comp = asChild ? Slot.Root : "button"
+  const Comp = asChild ? Slot : "button"
 
   return (
     <Comp
