@@ -160,7 +160,7 @@ function App() {
           {features.map((feature, idx) => (
             <Card
               key={idx}
-              className="feature-card border border-[var(--line)] transition-all duration-200"
+              className="feature-card border border-[var(--border)] transition-all duration-200"
             >
               <CardHeader>
                 <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--lagoon)] to-[var(--palm)] text-white">
@@ -209,13 +209,13 @@ function App() {
             Available for Linux and macOS
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <div className="flex items-center gap-3 rounded-xl border border-[var(--line)] bg-[var(--chip-bg)] px-6 py-4">
+            <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--chip-bg)] px-6 py-4">
               <Terminal className="h-8 w-8 text-[var(--lagoon-deep)]" />
               <span className="text-lg font-bold text-[var(--sea-ink)]">
                 {t("platform.linux")}
               </span>
             </div>
-            <div className="flex items-center gap-3 rounded-xl border border-[var(--line)] bg-[var(--chip-bg)] px-6 py-4">
+            <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--chip-bg)] px-6 py-4">
               <svg className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   fill="var(--lagoon-deep)"
@@ -238,7 +238,7 @@ function App() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((testimonial, idx) => (
-            <Card key={idx} className="border border-[var(--line)]">
+            <Card key={idx} className="border border-[var(--border)]">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div className="text-4xl">{testimonial.avatar}</div>

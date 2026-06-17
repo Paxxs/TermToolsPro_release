@@ -74,7 +74,10 @@ function DownloadPage() {
 
           <div className="grid gap-8 md:grid-cols-2">
             {platforms.map((platform, idx) => (
-              <Card key={idx} className="border border-[var(--line)] text-left">
+              <Card
+                key={idx}
+                className="border border-[var(--border)] text-left"
+              >
                 <CardHeader>
                   <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--lagoon)] to-[var(--palm)] text-white">
                     <platform.icon className="h-8 w-8" />
@@ -92,7 +95,7 @@ function DownloadPage() {
                       <a
                         key={i}
                         href={download.link}
-                        className="flex items-center justify-between rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-4 py-3 text-sm font-medium text-[var(--sea-ink)] transition hover:bg-[var(--link-bg-hover)]"
+                        className="flex items-center justify-between rounded-lg border border-[var(--border)] bg-[var(--chip-bg)] px-4 py-3 text-sm font-medium text-[var(--sea-ink)] transition hover:bg-[var(--link-bg-hover)]"
                       >
                         <span>{download.label}</span>
                         <Download className="h-4 w-4" />

@@ -75,7 +75,7 @@ function About() {
 
       <section className="demo-page demo-page-wide py-20">
         <div className="mx-auto max-w-4xl">
-          <Card className="border border-[var(--line)]">
+          <Card className="border border-[var(--border)]">
             <CardHeader>
               <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--lagoon)] to-[var(--palm)] text-white">
                 <Target className="h-8 w-8" />
@@ -125,7 +125,7 @@ function About() {
 
           <div className="grid gap-6 md:grid-cols-2">
             {team.map((member, idx) => (
-              <Card key={idx} className="border border-[var(--line)]">
+              <Card key={idx} className="border border-[var(--border)]">
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div className="text-5xl">{member.avatar}</div>
@@ -169,7 +169,7 @@ function About() {
                   <div
                     className={`flex-1 ${idx % 2 === 0 ? "text-right" : "text-left"}`}
                   >
-                    <Card className="border border-[var(--line)]">
+                    <Card className="border border-[var(--border)]">
                       <CardHeader>
                         <CardTitle className="text-lg text-[var(--sea-ink)]">
                           {event.title}

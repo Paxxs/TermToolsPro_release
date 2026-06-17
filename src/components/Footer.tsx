@@ -6,7 +6,7 @@ export default function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="site-footer mt-20 border-t border-[var(--line)] px-4 pt-10 pb-14 text-[var(--sea-ink-soft)]">
+    <footer className="site-footer mt-20 border-t border-[var(--border)] px-4 pt-10 pb-14 text-[var(--sea-ink-soft)]">
       <div className="page-wrap">
         <div className="flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
           <div>
