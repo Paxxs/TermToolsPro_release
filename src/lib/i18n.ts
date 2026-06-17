@@ -38,6 +38,27 @@ export const translations = {
       linux: "Linux",
       macos: "macOS",
     },
+    testimonials: {
+      title: "What Users Say",
+      subtitle: "Trusted by developers worldwide",
+      users: {
+        alex: {
+          name: "Alex Chen",
+          role: "DevOps Engineer",
+          content: "TermTools has streamlined our documentation process. Recording terminal sessions has never been easier.",
+        },
+        sarah: {
+          name: "Sarah Martinez",
+          role: "Technical Writer",
+          content: "The export quality is exceptional. Perfect for creating professional documentation and tutorials.",
+        },
+        michael: {
+          name: "Michael Kim",
+          role: "Software Engineer",
+          content: "Best tool for capturing terminal workflows. The replay feature is a game-changer.",
+        },
+      },
+    },
     download: {
       title: "Download",
       subtitle: "Get TermTools for your platform",
@@ -122,6 +143,27 @@ export const translations = {
       title: "平台支持",
       linux: "Linux",
       macos: "macOS",
+    },
+    testimonials: {
+      title: "用户评价",
+      subtitle: "深受全球开发者信赖",
+      users: {
+        alex: {
+          name: "Alex Chen",
+          role: "DevOps 工程师",
+          content: "TermTools 简化了我们的文档流程。录制终端会话从未如此简单。",
+        },
+        sarah: {
+          name: "Sarah Martinez",
+          role: "技术文档工程师",
+          content: "导出质量非常出色。非常适合创建专业文档和教程。",
+        },
+        michael: {
+          name: "Michael Kim",
+          role: "软件工程师",
+          content: "捕获终端工作流程的最佳工具。回放功能改变了游戏规则。",
+        },
+      },
     },
     download: {
       title: "下载",

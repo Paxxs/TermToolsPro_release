@@ -68,24 +68,21 @@ function App() {
 
   const testimonials = [
     {
-      name: "Alex Chen",
-      role: "DevOps Engineer",
-      content:
-        "TermTools has streamlined our documentation process. Recording terminal sessions has never been easier.",
+      name: t("testimonials.users.alex.name"),
+      role: t("testimonials.users.alex.role"),
+      content: t("testimonials.users.alex.content"),
       avatar: "👨‍💻",
     },
     {
-      name: "Sarah Martinez",
-      role: "Technical Writer",
-      content:
-        "The export quality is exceptional. Perfect for creating professional documentation and tutorials.",
+      name: t("testimonials.users.sarah.name"),
+      role: t("testimonials.users.sarah.role"),
+      content: t("testimonials.users.sarah.content"),
       avatar: "👩‍💼",
     },
     {
-      name: "Michael Kim",
-      role: "Software Engineer",
-      content:
-        "Best tool for capturing terminal workflows. The replay feature is a game-changer.",
+      name: t("testimonials.users.michael.name"),
+      role: t("testimonials.users.michael.role"),
+      content: t("testimonials.users.michael.content"),
       avatar: "👨‍🔧",
     },
   ]
@@ -233,8 +230,8 @@ function App() {
       {/* Testimonials Section */}
       <section className="demo-page demo-page-wide py-20">
         <div className="mb-12 text-center">
-          <h2 className="demo-title mb-4">What Users Say</h2>
-          <p className="demo-muted text-lg">Trusted by developers worldwide</p>
+          <h2 className="demo-title mb-4">{t("testimonials.title")}</h2>
+          <p className="demo-muted text-lg">{t("testimonials.subtitle")}</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((testimonial, idx) => (
