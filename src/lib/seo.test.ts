@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest"
 
 import { languages, localizedRoutes } from "./i18n-routing"
 import {
+  OG_IMAGE_URL,
   SITE_URL,
   getAlternateLinks,
   getCanonicalUrl,
@@ -15,9 +16,7 @@ describe("SEO helpers", () => {
     expect(getCanonicalUrl("/", "en")).toBe(`${SITE_URL}/`)
     expect(getCanonicalUrl("/", "zh")).toBe(`${SITE_URL}/zh`)
     expect(getCanonicalUrl("/download", "en")).toBe(`${SITE_URL}/download`)
-    expect(getCanonicalUrl("/download", "zh")).toBe(
-      `${SITE_URL}/zh/download`
-    )
+    expect(getCanonicalUrl("/download", "zh")).toBe(`${SITE_URL}/zh/download`)
   })
 
   it("builds reciprocal alternate language links for a route pair", () => {
@@ -51,9 +50,7 @@ describe("SEO helpers", () => {
 
   it("builds route head output with canonical and alternate links", () => {
     const head = getSeoHead("/download", "zh")
-    const canonicalLinks = head.links.filter(
-      (link) => link.rel === "canonical"
-    )
+    const canonicalLinks = head.links.filter((link) => link.rel === "canonical")
     const alternateLinks = head.links.filter((link) => link.rel === "alternate")
 
     expect(canonicalLinks).toEqual([
@@ -77,14 +74,26 @@ describe("SEO helpers", () => {
       property: "og:url",
       content: `${SITE_URL}/zh/download`,
     })
+    expect(head.meta).toContainEqual({
+      property: "og:image",
+      content: OG_IMAGE_URL,
+    })
+    expect(head.meta).toContainEqual({
+      name: "twitter:card",
+      content: "summary_large_image",
+    })
+    expect(head.meta).toContainEqual({
+      name: "twitter:image",
+      content: OG_IMAGE_URL,
+    })
   })
 
   it("serializes JSON-LD for primary SEO pages", () => {
     const homeJsonLd = getSeoHead("/", "en").scripts.map((script) =>
       JSON.parse(script.children)
     )
-    const downloadJsonLd = getSeoHead("/download", "zh").scripts.map(
-      (script) => JSON.parse(script.children)
+    const downloadJsonLd = getSeoHead("/download", "zh").scripts.map((script) =>
+      JSON.parse(script.children)
     )
     const aboutJsonLd = getSeoHead("/about", "en").scripts.map((script) =>
       JSON.parse(script.children)
@@ -98,9 +107,7 @@ describe("SEO helpers", () => {
     expect(downloadJsonLd.map((entry) => entry["@type"])).toEqual([
       "SoftwareApplication",
     ])
-    expect(aboutJsonLd.map((entry) => entry["@type"])).toEqual([
-      "Organization",
-    ])
+    expect(aboutJsonLd.map((entry) => entry["@type"])).toEqual(["Organization"])
     expect(legalJsonLd).toEqual([])
   })
 

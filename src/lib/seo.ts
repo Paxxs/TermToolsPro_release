@@ -7,6 +7,8 @@ import type { Language, LocalizedRoute } from "./i18n-routing"
 
 export const SITE_URL = "https://termtools.apppro.dev"
 export const siteName = "TermTools Pro"
+export const OG_IMAGE_PATH = "/og-image.png"
+export const OG_IMAGE_URL = `${SITE_URL}${OG_IMAGE_PATH}`
 
 const seoLanguages = ["en", "zh"] as const satisfies ReadonlyArray<Language>
 
@@ -100,7 +102,11 @@ export const seoRoutes = {
       title: "Download TermTools Pro for macOS and Linux",
       description:
         "Download TermTools Pro for macOS and Linux, then start recording terminal sessions, replaying workflows, and exporting developer-ready demos.",
-      keywords: ["download TermTools", "macOS terminal recorder", "Linux CLI recorder"],
+      keywords: [
+        "download TermTools",
+        "macOS terminal recorder",
+        "Linux CLI recorder",
+      ],
     },
     zh: {
       title: "下载适用于 macOS 和 Linux 的 TermTools Pro",
@@ -168,7 +174,9 @@ export function getCanonicalUrl(
   return pathname === "/" ? `${SITE_URL}/` : `${SITE_URL}${pathname}`
 }
 
-export function getAlternateLinks(route: LocalizedRoute): Array<LinkDescriptor> {
+export function getAlternateLinks(
+  route: LocalizedRoute
+): Array<LinkDescriptor> {
   const languageLinks = seoLanguages.map((language) => ({
     rel: "alternate" as const,
     hrefLang: hrefLangByLanguage[language],
@@ -185,10 +193,7 @@ export function getAlternateLinks(route: LocalizedRoute): Array<LinkDescriptor> 
   ]
 }
 
-export function getSeoHead(
-  route: LocalizedRoute,
-  language: Language
-): SeoHead {
+export function getSeoHead(route: LocalizedRoute, language: Language): SeoHead {
   const content: SeoRouteContent = seoRoutes[route][language]
   const canonicalUrl = getCanonicalUrl(route, language)
   const alternateLanguage = language === "en" ? "zh" : "en"
@@ -234,6 +239,22 @@ export function getSeoHead(
         content: canonicalUrl,
       },
       {
+        property: "og:image",
+        content: OG_IMAGE_URL,
+      },
+      {
+        property: "og:image:width",
+        content: "1200",
+      },
+      {
+        property: "og:image:height",
+        content: "630",
+      },
+      {
+        property: "og:image:alt",
+        content: `${siteName} terminal recording preview`,
+      },
+      {
         property: "og:site_name",
         content: siteName,
       },
@@ -247,7 +268,7 @@ export function getSeoHead(
       },
       {
         name: "twitter:card",
-        content: "summary",
+        content: "summary_large_image",
       },
       {
         name: "twitter:title",
@@ -256,6 +277,10 @@ export function getSeoHead(
       {
         name: "twitter:description",
         content: content.description,
+      },
+      {
+        name: "twitter:image",
+        content: OG_IMAGE_URL,
       },
     ],
     links: [

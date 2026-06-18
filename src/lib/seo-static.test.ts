@@ -3,7 +3,7 @@ import { resolve } from "node:path"
 
 import { describe, expect, it } from "vitest"
 
-import { SITE_URL, getSitemapEntries } from "./seo"
+import { OG_IMAGE_PATH, SITE_URL, getSitemapEntries } from "./seo"
 
 describe("static SEO files", () => {
   it("publishes a sitemap with every localized SEO URL", () => {
@@ -48,8 +48,20 @@ Sitemap: ${SITE_URL}/sitemap.xml`)
       expect(existsSync(resolve("public", icon.src))).toBe(true)
     }
   })
+
+  it("publishes a PNG Open Graph image asset", () => {
+    const image = readFileSync(
+      resolve("public", trimLeadingSlash(OG_IMAGE_PATH))
+    )
+
+    expect(image.subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a")
+  })
 })
 
 function readPublicFile(filename: string): string {
   return readFileSync(resolve("public", filename), "utf8")
+}
+
+function trimLeadingSlash(pathname: string): string {
+  return pathname.replace(/^\//, "")
 }
