@@ -2,6 +2,6 @@ import { createFileRoute } from "@tanstack/react-router"
 
 import { DownloadPage } from "@/pages/DownloadPage"
 
-export const Route = createFileRoute("/download")({
+export const Route = createFileRoute("/zh/download")({
   component: DownloadPage,
 })

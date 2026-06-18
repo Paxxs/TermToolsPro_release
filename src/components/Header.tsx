@@ -1,7 +1,13 @@
-import { Link } from "@tanstack/react-router"
+import { Link, useLocation } from "@tanstack/react-router"
 import { useTranslation } from "react-i18next"
 import { Moon, Sun, Languages } from "lucide-react"
 import { useTheme } from "../hooks/use-theme"
+import {
+  type Language,
+  getLanguageFromPathname,
+  getLocalizedRoute,
+  localizePathname,
+} from "../lib/i18n-routing"
 import { Button } from "./ui/button"
 import {
   DropdownMenu,
@@ -11,11 +17,17 @@ import {
 } from "./ui/dropdown-menu"
 
 export default function Header() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const { theme, toggleTheme } = useTheme()
+  const pathname = useLocation({ select: (location) => location.pathname })
+  const language = getLanguageFromPathname(pathname)
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng)
+  const navLink = (route: Parameters<typeof getLocalizedRoute>[0]) => {
+    return getLocalizedRoute(route, language)
+  }
+
+  const languageLink = (targetLanguage: Language) => {
+    return localizePathname(pathname, targetLanguage)
   }
 
   return (
@@ -23,7 +35,7 @@ export default function Header() {
       <nav className="page-wrap flex flex-wrap items-center gap-x-3 gap-y-2 py-3 sm:py-4">
         <h2 className="m-0 flex-shrink-0 text-base font-semibold tracking-tight sm:flex-1">
           <Link
-            to="/"
+            to={navLink("/")}
             className="inline-flex items-center gap-2 rounded-full border border-[var(--chip-line)] bg-[var(--chip-bg)] px-3 py-1.5 text-sm text-[var(--sea-ink)] no-underline shadow-[0_8px_24px_rgba(30,90,72,0.08)] sm:px-4 sm:py-2"
           >
             <span className="h-2 w-2 rounded-full bg-[linear-gradient(90deg,#56c6be,#7ed3bf)]" />
@@ -33,22 +45,25 @@ export default function Header() {
 
         <div className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-1 pb-1 text-sm font-semibold sm:order-none sm:w-auto sm:flex-nowrap sm:justify-center sm:pb-0">
           <Link
-            to="/"
+            to={navLink("/")}
             className="nav-link"
+            activeOptions={{ exact: true }}
             activeProps={{ className: "nav-link is-active" }}
           >
             {t("nav.features")}
           </Link>
           <Link
-            to="/download"
+            to={navLink("/download")}
             className="nav-link"
+            activeOptions={{ exact: true }}
             activeProps={{ className: "nav-link is-active" }}
           >
             {t("nav.download")}
           </Link>
           <Link
-            to="/about"
+            to={navLink("/about")}
             className="nav-link"
+            activeOptions={{ exact: true }}
             activeProps={{ className: "nav-link is-active" }}
           >
             {t("nav.about")}
@@ -68,10 +83,10 @@ export default function Header() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => changeLanguage("en")}>
+              <DropdownMenuItem render={<Link to={languageLink("en")} />}>
                 English
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => changeLanguage("zh")}>
+              <DropdownMenuItem render={<Link to={languageLink("zh")} />}>
                 中文
               </DropdownMenuItem>
             </DropdownMenuContent>
