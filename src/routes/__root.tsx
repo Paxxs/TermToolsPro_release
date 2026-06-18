@@ -35,14 +35,6 @@ export const Route = createRootRoute({
         name: "viewport",
         content: "width=device-width, initial-scale=1",
       },
-      {
-        title: "TermTools Pro - Powerful Terminal Recorder",
-      },
-      {
-        name: "description",
-        content:
-          "Professional terminal recording and playback tool for developers",
-      },
     ],
     links: [
       {

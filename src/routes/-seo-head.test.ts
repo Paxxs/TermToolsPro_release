@@ -4,6 +4,7 @@ import { getSeoHead } from "@/lib/seo"
 import type { Language, LocalizedRoute } from "@/lib/i18n-routing"
 
 import { Route as AboutRoute } from "./about"
+import { Route as RootRoute } from "./__root"
 import { Route as DownloadRoute } from "./download"
 import { Route as IndexRoute } from "./index"
 import { Route as DisclaimerRoute } from "./legal/disclaimer"
@@ -53,6 +54,24 @@ const chineseRoutes = [
 }>
 
 describe("route SEO head metadata", () => {
+  it("keeps the root route head limited to global document defaults", () => {
+    const head = RootRoute.options.head?.() as {
+      meta: Array<Record<string, string>>
+      links: Array<Record<string, string>>
+    }
+
+    expect(head.meta).toContainEqual({ charSet: "utf-8" })
+    expect(head.meta).toContainEqual({
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
+    })
+    expect(head.meta.some((meta) => "title" in meta)).toBe(false)
+    expect(
+      head.meta.some((meta) => meta.name === "description")
+    ).toBe(false)
+    expect(head.links.some((link) => link.rel === "stylesheet")).toBe(true)
+  })
+
   it("wires English routes to localized SEO metadata", () => {
     for (const routeConfig of englishRoutes) {
       const head = routeConfig.module.options.head
