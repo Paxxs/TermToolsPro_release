@@ -1,4 +1,4 @@
-import { ChevronRight, Download } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider"
 import { ProgressiveBlur } from "@/components/motion-primitives/progressive-blur"
@@ -40,34 +40,34 @@ export function HomeHero({
   return (
     <section className="relative overflow-x-hidden border-b border-border">
       <div className="relative">
-        <div className="relative z-10 flex min-h-[calc(100svh-4rem)] flex-col justify-end px-6 pt-24 pb-8 sm:min-h-[660px] lg:aspect-video lg:min-h-[720px] lg:px-12 lg:pb-24">
-          <div className="mx-auto w-full max-w-7xl">
-            <div className="rise-in max-w-2xl">
-              <span className="mb-5 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white/80 uppercase backdrop-blur-md">
+        <div className="relative z-10 flex aspect-2/3 flex-col justify-end px-6 lg:aspect-video lg:px-12">
+          <div className="mx-auto w-full max-w-7xl pb-6 lg:pb-32">
+            <div className="rise-in max-w-lg">
+              <span className="mb-5 inline-flex rounded-full border border-border bg-muted px-4 py-2 text-xs font-semibold text-muted-foreground uppercase">
                 {subtitle}
               </span>
-              <h1 className="text-5xl leading-none font-black text-balance text-white sm:text-6xl xl:text-7xl">
+              <h1 className="text-5xl leading-none font-black text-balance md:text-6xl xl:text-7xl">
                 {title}
               </h1>
-              <p className="mt-6 max-w-xl text-lg text-balance text-white/76 sm:text-xl">
+              <p className="mt-6 max-w-xl text-lg text-balance text-muted-foreground sm:text-xl">
                 {description}
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex items-center gap-2">
                 <Button
                   asChild={Boolean(getStartedHref)}
                   size="lg"
-                  className="h-12 rounded-full px-5 text-base"
+                  className="h-12 rounded-full pr-3 pl-5 text-base"
                 >
                   {getStartedHref ? (
                     <a href={getStartedHref}>
-                      <Download data-icon="inline-start" />
                       <span className="text-nowrap">{getStarted}</span>
+                      <ChevronRight className="ml-1" />
                     </a>
                   ) : (
                     <>
-                      <Download data-icon="inline-start" />
                       <span className="text-nowrap">{getStarted}</span>
+                      <ChevronRight className="ml-1" />
                     </>
                   )}
                 </Button>
@@ -75,18 +75,14 @@ export function HomeHero({
                   asChild={Boolean(learnMoreHref)}
                   size="lg"
                   variant="ghost"
-                  className="h-12 rounded-full border border-white/18 bg-black/18 px-5 text-base text-white shadow-sm backdrop-blur-sm hover:bg-black/28 hover:text-white"
+                  className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5"
                 >
                   {learnMoreHref ? (
                     <a href={learnMoreHref}>
                       <span className="text-nowrap">{learnMore}</span>
-                      <ChevronRight data-icon="inline-end" />
                     </a>
                   ) : (
-                    <>
-                      <span className="text-nowrap">{learnMore}</span>
-                      <ChevronRight data-icon="inline-end" />
-                    </>
+                    <span className="text-nowrap">{learnMore}</span>
                   )}
                 </Button>
               </div>
@@ -94,19 +90,16 @@ export function HomeHero({
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-1 overflow-hidden rounded-3xl border border-black/10 lg:rounded-[3rem] dark:border-white/5">
+        <div className="pointer-events-none absolute inset-1 aspect-2/3 overflow-hidden rounded-3xl border border-black/10 lg:aspect-video lg:rounded-[3rem] dark:border-white/5">
           <video
             aria-hidden="true"
             autoPlay
             loop
             muted
             playsInline
-            className="size-full -scale-x-100 object-cover"
+            className="not-dark:invert size-full -scale-x-100 object-cover"
             src={HERO_VIDEO_SRC}
           />
-          <div className="absolute inset-0 bg-black/36" />
-          <div className="absolute inset-0 bg-linear-to-r from-black/76 via-black/22 to-transparent" />
-          <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent" />
         </div>
       </div>
 
