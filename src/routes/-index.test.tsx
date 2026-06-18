@@ -1,10 +1,10 @@
 // @vitest-environment jsdom
 
-import { render, screen, within } from "@testing-library/react"
-import { beforeAll, describe, expect, it } from "vitest"
+import { cleanup, render, screen, within } from "@testing-library/react"
+import { afterEach, beforeAll, describe, expect, it } from "vitest"
 
-import "@/lib/i18n-config"
 import { HomePage } from "@/components/HomePage"
+import i18n from "@/lib/i18n-config"
 
 class ResizeObserverMock {
   observe() {}
@@ -28,14 +28,20 @@ describe("home page", () => {
     globalThis.ResizeObserver = ResizeObserverMock
   })
 
+  afterEach(async () => {
+    cleanup()
+    await i18n.changeLanguage("en")
+  })
+
   it("keeps the original TermTools Pro product story and legacy tool content", async () => {
     render(<HomePage />)
 
     expect(
-      await screen.findByText(/TermRecord, ReplayTheTerm, and FakeTerm/)
+      (await screen.findAllByText(/TermRecord, ReplayTheTerm, and FakeTerm/))
+        .length
     ).toBeTruthy()
     expect(
-      screen.getByText(/recording, playback, and replacement/)
+      screen.getAllByText(/recording, playback, and replacement/).length
     ).toBeTruthy()
     expect(
       screen.getByRole("heading", { name: "Core capabilities at a glance" })
@@ -70,5 +76,24 @@ describe("home page", () => {
     expect(
       within(legacySection).getByText(/hide confidential information/i)
     ).toBeTruthy()
+  })
+
+  it("renders the legacy Chinese product copy when Chinese is selected", async () => {
+    await i18n.changeLanguage("zh")
+
+    render(<HomePage />)
+
+    expect(
+      screen.getAllByText(/TermRecord、ReplayTheTerm、FakeTerm/).length
+    ).toBeTruthy()
+    expect(screen.getAllByText(/录制、回放、替换/).length).toBeTruthy()
+    expect(
+      screen.getByRole("heading", { name: "各个特性，一眼秒懂" })
+    ).toBeTruthy()
+    expect(
+      screen.getByRole("heading", { name: "仍然想用单功能版本？" })
+    ).toBeTruthy()
+    expect(screen.getByText(/SuperPaxxs/)).toBeTruthy()
+    expect(screen.getByRole("link", { name: "MorFans Dev" })).toBeTruthy()
   })
 })

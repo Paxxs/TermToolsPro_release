@@ -9,8 +9,8 @@ export const translations = {
       title: "TermTools Pro",
       subtitle: "Powerful Terminal Recorder",
       description:
-        "Professional terminal recording and playback tool for developers",
-      getStarted: "Get Started",
+        "TermRecord, ReplayTheTerm, and FakeTerm now work together in one professional terminal recording, playback, and replacement tool.",
+      getStarted: "Try it now",
       learnMore: "Learn More",
     },
     features: {
@@ -45,17 +45,20 @@ export const translations = {
         alex: {
           name: "Alex Chen",
           role: "DevOps Engineer",
-          content: "TermTools has streamlined our documentation process. Recording terminal sessions has never been easier.",
+          content:
+            "TermTools has streamlined our documentation process. Recording terminal sessions has never been easier.",
         },
         sarah: {
           name: "Sarah Martinez",
           role: "Technical Writer",
-          content: "The export quality is exceptional. Perfect for creating professional documentation and tutorials.",
+          content:
+            "The export quality is exceptional. Perfect for creating professional documentation and tutorials.",
         },
         michael: {
           name: "Michael Kim",
           role: "Software Engineer",
-          content: "Best tool for capturing terminal workflows. The replay feature is a game-changer.",
+          content:
+            "Best tool for capturing terminal workflows. The replay feature is a game-changer.",
         },
       },
     },
@@ -115,8 +118,9 @@ export const translations = {
     hero: {
       title: "TermTools Pro",
       subtitle: "强大的终端录制器",
-      description: "为开发者打造的专业终端录制与回放工具",
-      getStarted: "立即开始",
+      description:
+        "TermRecord、ReplayTheTerm、FakeTerm 现已强强合体，集成录制、回放、替换三大主要功能。",
+      getStarted: "立即体验",
       learnMore: "了解更多",
     },
     features: {
