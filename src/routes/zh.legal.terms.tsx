@@ -2,6 +2,6 @@ import { createFileRoute } from "@tanstack/react-router"
 
 import { TermsPage } from "@/pages/legal/TermsPage"
 
-export const Route = createFileRoute("/legal/terms")({
+export const Route = createFileRoute("/zh/legal/terms")({
   component: TermsPage,
 })

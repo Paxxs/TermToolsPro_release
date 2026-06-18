@@ -9,14 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ZhRouteImport } from './routes/zh'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ZhDownloadRouteImport } from './routes/zh.download'
+import { Route as ZhAboutRouteImport } from './routes/zh.about'
 import { Route as LegalTermsRouteImport } from './routes/legal/terms'
 import { Route as LegalPrivacyRouteImport } from './routes/legal/privacy'
 import { Route as LegalLicenseRouteImport } from './routes/legal/license'
 import { Route as LegalDisclaimerRouteImport } from './routes/legal/disclaimer'
+import { Route as ZhLegalTermsRouteImport } from './routes/zh.legal.terms'
+import { Route as ZhLegalPrivacyRouteImport } from './routes/zh.legal.privacy'
+import { Route as ZhLegalLicenseRouteImport } from './routes/zh.legal.license'
+import { Route as ZhLegalDisclaimerRouteImport } from './routes/zh.legal.disclaimer'
 
+const ZhRoute = ZhRouteImport.update({
+  id: '/zh',
+  path: '/zh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DownloadRoute = DownloadRouteImport.update({
   id: '/download',
   path: '/download',
@@ -31,6 +43,16 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ZhDownloadRoute = ZhDownloadRouteImport.update({
+  id: '/download',
+  path: '/download',
+  getParentRoute: () => ZhRoute,
+} as any)
+const ZhAboutRoute = ZhAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => ZhRoute,
 } as any)
 const LegalTermsRoute = LegalTermsRouteImport.update({
   id: '/legal/terms',
@@ -52,34 +74,75 @@ const LegalDisclaimerRoute = LegalDisclaimerRouteImport.update({
   path: '/legal/disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ZhLegalTermsRoute = ZhLegalTermsRouteImport.update({
+  id: '/legal/terms',
+  path: '/legal/terms',
+  getParentRoute: () => ZhRoute,
+} as any)
+const ZhLegalPrivacyRoute = ZhLegalPrivacyRouteImport.update({
+  id: '/legal/privacy',
+  path: '/legal/privacy',
+  getParentRoute: () => ZhRoute,
+} as any)
+const ZhLegalLicenseRoute = ZhLegalLicenseRouteImport.update({
+  id: '/legal/license',
+  path: '/legal/license',
+  getParentRoute: () => ZhRoute,
+} as any)
+const ZhLegalDisclaimerRoute = ZhLegalDisclaimerRouteImport.update({
+  id: '/legal/disclaimer',
+  path: '/legal/disclaimer',
+  getParentRoute: () => ZhRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/download': typeof DownloadRoute
+  '/zh': typeof ZhRouteWithChildren
   '/legal/disclaimer': typeof LegalDisclaimerRoute
   '/legal/license': typeof LegalLicenseRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
+  '/zh/about': typeof ZhAboutRoute
+  '/zh/download': typeof ZhDownloadRoute
+  '/zh/legal/disclaimer': typeof ZhLegalDisclaimerRoute
+  '/zh/legal/license': typeof ZhLegalLicenseRoute
+  '/zh/legal/privacy': typeof ZhLegalPrivacyRoute
+  '/zh/legal/terms': typeof ZhLegalTermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/download': typeof DownloadRoute
+  '/zh': typeof ZhRouteWithChildren
   '/legal/disclaimer': typeof LegalDisclaimerRoute
   '/legal/license': typeof LegalLicenseRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
+  '/zh/about': typeof ZhAboutRoute
+  '/zh/download': typeof ZhDownloadRoute
+  '/zh/legal/disclaimer': typeof ZhLegalDisclaimerRoute
+  '/zh/legal/license': typeof ZhLegalLicenseRoute
+  '/zh/legal/privacy': typeof ZhLegalPrivacyRoute
+  '/zh/legal/terms': typeof ZhLegalTermsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/download': typeof DownloadRoute
+  '/zh': typeof ZhRouteWithChildren
   '/legal/disclaimer': typeof LegalDisclaimerRoute
   '/legal/license': typeof LegalLicenseRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
+  '/zh/about': typeof ZhAboutRoute
+  '/zh/download': typeof ZhDownloadRoute
+  '/zh/legal/disclaimer': typeof ZhLegalDisclaimerRoute
+  '/zh/legal/license': typeof ZhLegalLicenseRoute
+  '/zh/legal/privacy': typeof ZhLegalPrivacyRoute
+  '/zh/legal/terms': typeof ZhLegalTermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -87,34 +150,56 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/download'
+    | '/zh'
     | '/legal/disclaimer'
     | '/legal/license'
     | '/legal/privacy'
     | '/legal/terms'
+    | '/zh/about'
+    | '/zh/download'
+    | '/zh/legal/disclaimer'
+    | '/zh/legal/license'
+    | '/zh/legal/privacy'
+    | '/zh/legal/terms'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/download'
+    | '/zh'
     | '/legal/disclaimer'
     | '/legal/license'
     | '/legal/privacy'
     | '/legal/terms'
+    | '/zh/about'
+    | '/zh/download'
+    | '/zh/legal/disclaimer'
+    | '/zh/legal/license'
+    | '/zh/legal/privacy'
+    | '/zh/legal/terms'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/download'
+    | '/zh'
     | '/legal/disclaimer'
     | '/legal/license'
     | '/legal/privacy'
     | '/legal/terms'
+    | '/zh/about'
+    | '/zh/download'
+    | '/zh/legal/disclaimer'
+    | '/zh/legal/license'
+    | '/zh/legal/privacy'
+    | '/zh/legal/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   DownloadRoute: typeof DownloadRoute
+  ZhRoute: typeof ZhRouteWithChildren
   LegalDisclaimerRoute: typeof LegalDisclaimerRoute
   LegalLicenseRoute: typeof LegalLicenseRoute
   LegalPrivacyRoute: typeof LegalPrivacyRoute
@@ -123,6 +208,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/zh': {
+      id: '/zh'
+      path: '/zh'
+      fullPath: '/zh'
+      preLoaderRoute: typeof ZhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/download': {
       id: '/download'
       path: '/download'
@@ -143,6 +235,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/zh/download': {
+      id: '/zh/download'
+      path: '/download'
+      fullPath: '/zh/download'
+      preLoaderRoute: typeof ZhDownloadRouteImport
+      parentRoute: typeof ZhRoute
+    }
+    '/zh/about': {
+      id: '/zh/about'
+      path: '/about'
+      fullPath: '/zh/about'
+      preLoaderRoute: typeof ZhAboutRouteImport
+      parentRoute: typeof ZhRoute
     }
     '/legal/terms': {
       id: '/legal/terms'
@@ -172,13 +278,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalDisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/zh/legal/terms': {
+      id: '/zh/legal/terms'
+      path: '/legal/terms'
+      fullPath: '/zh/legal/terms'
+      preLoaderRoute: typeof ZhLegalTermsRouteImport
+      parentRoute: typeof ZhRoute
+    }
+    '/zh/legal/privacy': {
+      id: '/zh/legal/privacy'
+      path: '/legal/privacy'
+      fullPath: '/zh/legal/privacy'
+      preLoaderRoute: typeof ZhLegalPrivacyRouteImport
+      parentRoute: typeof ZhRoute
+    }
+    '/zh/legal/license': {
+      id: '/zh/legal/license'
+      path: '/legal/license'
+      fullPath: '/zh/legal/license'
+      preLoaderRoute: typeof ZhLegalLicenseRouteImport
+      parentRoute: typeof ZhRoute
+    }
+    '/zh/legal/disclaimer': {
+      id: '/zh/legal/disclaimer'
+      path: '/legal/disclaimer'
+      fullPath: '/zh/legal/disclaimer'
+      preLoaderRoute: typeof ZhLegalDisclaimerRouteImport
+      parentRoute: typeof ZhRoute
+    }
   }
 }
+
+interface ZhRouteChildren {
+  ZhAboutRoute: typeof ZhAboutRoute
+  ZhDownloadRoute: typeof ZhDownloadRoute
+  ZhLegalDisclaimerRoute: typeof ZhLegalDisclaimerRoute
+  ZhLegalLicenseRoute: typeof ZhLegalLicenseRoute
+  ZhLegalPrivacyRoute: typeof ZhLegalPrivacyRoute
+  ZhLegalTermsRoute: typeof ZhLegalTermsRoute
+}
+
+const ZhRouteChildren: ZhRouteChildren = {
+  ZhAboutRoute: ZhAboutRoute,
+  ZhDownloadRoute: ZhDownloadRoute,
+  ZhLegalDisclaimerRoute: ZhLegalDisclaimerRoute,
+  ZhLegalLicenseRoute: ZhLegalLicenseRoute,
+  ZhLegalPrivacyRoute: ZhLegalPrivacyRoute,
+  ZhLegalTermsRoute: ZhLegalTermsRoute,
+}
+
+const ZhRouteWithChildren = ZhRoute._addFileChildren(ZhRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   DownloadRoute: DownloadRoute,
+  ZhRoute: ZhRouteWithChildren,
   LegalDisclaimerRoute: LegalDisclaimerRoute,
   LegalLicenseRoute: LegalLicenseRoute,
   LegalPrivacyRoute: LegalPrivacyRoute,

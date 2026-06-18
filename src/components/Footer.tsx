@@ -1,9 +1,12 @@
-import { Link } from "@tanstack/react-router"
+import { Link, useLocation } from "@tanstack/react-router"
 import { useTranslation } from "react-i18next"
+import { getLanguageFromPathname, getLocalizedRoute } from "../lib/i18n-routing"
 
 export default function Footer() {
   const year = new Date().getFullYear()
   const { t } = useTranslation()
+  const pathname = useLocation({ select: (location) => location.pathname })
+  const language = getLanguageFromPathname(pathname)
 
   return (
     <footer className="site-footer mt-20 border-t border-[var(--border)] px-4 pt-10 pb-14 text-[var(--sea-ink-soft)]">
@@ -20,25 +23,25 @@ export default function Footer() {
 
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
             <Link
-              to="/legal/terms"
+              to={getLocalizedRoute("/legal/terms", language)}
               className="text-[var(--sea-ink-soft)] transition hover:text-[var(--sea-ink)]"
             >
               {t("footer.terms")}
             </Link>
             <Link
-              to="/legal/privacy"
+              to={getLocalizedRoute("/legal/privacy", language)}
               className="text-[var(--sea-ink-soft)] transition hover:text-[var(--sea-ink)]"
             >
               {t("footer.privacy")}
             </Link>
             <Link
-              to="/legal/license"
+              to={getLocalizedRoute("/legal/license", language)}
               className="text-[var(--sea-ink-soft)] transition hover:text-[var(--sea-ink)]"
             >
               {t("footer.license")}
             </Link>
             <Link
-              to="/legal/disclaimer"
+              to={getLocalizedRoute("/legal/disclaimer", language)}
               className="text-[var(--sea-ink-soft)] transition hover:text-[var(--sea-ink)]"
             >
               {t("footer.disclaimer")}
