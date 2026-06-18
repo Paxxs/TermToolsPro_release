@@ -21,7 +21,7 @@ import { Route as ZhTermsRoute } from "./zh.legal.terms"
 
 type RouteWithHead = {
   options: {
-    head?: (ctx?: never) => unknown
+    head?: unknown
   }
 }
 
@@ -55,7 +55,7 @@ const chineseRoutes = [
 
 describe("route SEO head metadata", () => {
   it("keeps the root route head limited to global document defaults", () => {
-    const head = RootRoute.options.head?.() as {
+    const head = callRouteHead(RootRoute) as {
       meta: Array<Record<string, string>>
       links: Array<Record<string, string>>
     }
@@ -74,10 +74,7 @@ describe("route SEO head metadata", () => {
 
   it("wires English routes to localized SEO metadata", () => {
     for (const routeConfig of englishRoutes) {
-      const head = routeConfig.module.options.head
-
-      expect(head).toBeTypeOf("function")
-      expect(head?.()).toEqual(
+      expect(callRouteHead(routeConfig.module)).toEqual(
         getSeoHead(routeConfig.route, routeConfig.language)
       )
     }
@@ -85,12 +82,17 @@ describe("route SEO head metadata", () => {
 
   it("wires Chinese routes to localized SEO metadata", () => {
     for (const routeConfig of chineseRoutes) {
-      const head = routeConfig.module.options.head
-
-      expect(head).toBeTypeOf("function")
-      expect(head?.()).toEqual(
+      expect(callRouteHead(routeConfig.module)).toEqual(
         getSeoHead(routeConfig.route, routeConfig.language)
       )
     }
   })
 })
+
+function callRouteHead(routeModule: RouteWithHead): unknown {
+  const head = routeModule.options.head
+
+  expect(head).toBeTypeOf("function")
+
+  return (head as () => unknown)()
+}

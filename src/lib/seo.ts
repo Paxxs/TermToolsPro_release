@@ -190,7 +190,7 @@ export function getSeoHead(
   route: LocalizedRoute,
   language: Language
 ): SeoHead {
-  const content = seoRoutes[route][language]
+  const content: SeoRouteContent = seoRoutes[route][language]
   const canonicalUrl = getCanonicalUrl(route, language)
   const alternateLanguage = language === "en" ? "zh" : "en"
   const keywordMeta = content.keywords
