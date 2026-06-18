@@ -1,4 +1,5 @@
 node_modules
+worktree-i18n-routes
 .DS_Store
 dist
 dist-ssr
