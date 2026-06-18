@@ -7,10 +7,9 @@ import {
   Palette,
   Terminal,
   Play,
-  Download,
   Settings,
 } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { HomeHero } from "@/components/HomeHero"
 import {
   Card,
   CardContent,
@@ -89,63 +88,13 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="demo-page demo-page-wide">
-        <div className="rise-in mx-auto max-w-4xl py-20 text-center">
-          <div className="mb-4">
-            <span className="island-kicker">{t("hero.subtitle")}</span>
-          </div>
-          <h1 className="demo-title mb-6 bg-gradient-to-r from-[var(--sea-ink)] to-[var(--sea-ink-soft)] bg-clip-text text-transparent">
-            {t("hero.title")}
-          </h1>
-          <p className="demo-muted mx-auto mb-8 max-w-2xl text-lg">
-            {t("hero.description")}
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="demo-button gap-2">
-              <Download className="h-5 w-5" />
-              {t("hero.getStarted")}
-            </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="demo-button-secondary"
-            >
-              {t("hero.learnMore")}
-            </Button>
-          </div>
-        </div>
-
-        {/* Demo Terminal Preview */}
-        <div className="demo-panel mx-auto max-w-4xl">
-          <div className="mb-3 flex items-center gap-2">
-            <div className="flex gap-1.5">
-              <span className="h-3 w-3 rounded-full bg-red-400" />
-              <span className="h-3 w-3 rounded-full bg-yellow-400" />
-              <span className="h-3 w-3 rounded-full bg-green-400" />
-            </div>
-            <span className="text-xs font-semibold text-[var(--sea-ink-soft)]">
-              terminal ~ bash
-            </span>
-          </div>
-          <div className="demo-code-block font-mono text-sm">
-            <div className="text-[var(--lagoon)]">
-              $ termtools record my-session
-            </div>
-            <div className="mt-1 text-[var(--sea-ink-soft)]">
-              ● Recording started... Press Ctrl+D to stop
-            </div>
-            <div className="mt-4">
-              <span className="text-[var(--palm)]">
-                $ npm install termtools
-              </span>
-            </div>
-            <div className="mt-1 text-[var(--sea-ink-soft)]">
-              ✓ Installation complete
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeHero
+        subtitle={t("hero.subtitle")}
+        title={t("hero.title")}
+        description={t("hero.description")}
+        getStarted={t("hero.getStarted")}
+        learnMore={t("hero.learnMore")}
+      />
 
       {/* Features Section */}
       <section className="demo-page demo-page-wide py-20">
