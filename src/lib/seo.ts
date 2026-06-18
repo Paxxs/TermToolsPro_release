@@ -2,9 +2,8 @@ import {
   defaultLanguage,
   getLocalizedRoute,
   localizedRoutes,
-  type Language,
-  type LocalizedRoute,
 } from "./i18n-routing"
+import type { Language, LocalizedRoute } from "./i18n-routing"
 
 export const SITE_URL = "https://termtools.apppro.dev"
 export const siteName = "TermTools Pro"
