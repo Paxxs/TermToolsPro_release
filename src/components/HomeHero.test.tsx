@@ -33,4 +33,20 @@ describe("HomeHero", () => {
     expect(video?.getAttribute("src")).toContain("videos.pexels.com")
     expect(screen.getByText("Built for terminal work")).toBeTruthy()
   })
+
+  it("renders hero calls to action as links when hrefs are provided", () => {
+    render(
+      <HomeHero
+        getStartedHref="https://example.com/download"
+        learnMoreHref="#features"
+      />
+    )
+
+    expect(
+      screen.getByRole("link", { name: "Get Started" }).getAttribute("href")
+    ).toBe("https://example.com/download")
+    expect(
+      screen.getByRole("link", { name: "Learn More" }).getAttribute("href")
+    ).toBe("#features")
+  })
 })

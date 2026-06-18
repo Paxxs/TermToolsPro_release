@@ -19,8 +19,9 @@ describe("Button", () => {
       </Button>
     )
 
-    expect(screen.getByRole("link", { name: "Docs" }).getAttribute("href")).toBe(
-      "/docs"
-    )
+    expect(
+      screen.getByRole("link", { name: "Docs" }).getAttribute("href")
+    ).toBe("/docs")
+    expect(screen.queryByRole("button", { name: "Docs" })).toBeNull()
   })
 })
