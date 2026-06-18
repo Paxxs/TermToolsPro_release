@@ -13,6 +13,7 @@ import { Route as ZhRouteImport } from './routes/zh'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ZhIndexRouteImport } from './routes/zh.index'
 import { Route as ZhDownloadRouteImport } from './routes/zh.download'
 import { Route as ZhAboutRouteImport } from './routes/zh.about'
 import { Route as LegalTermsRouteImport } from './routes/legal/terms'
@@ -43,6 +44,11 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ZhIndexRoute = ZhIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ZhRoute,
 } as any)
 const ZhDownloadRoute = ZhDownloadRouteImport.update({
   id: '/download',
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/legal/terms': typeof LegalTermsRoute
   '/zh/about': typeof ZhAboutRoute
   '/zh/download': typeof ZhDownloadRoute
+  '/zh/': typeof ZhIndexRoute
   '/zh/legal/disclaimer': typeof ZhLegalDisclaimerRoute
   '/zh/legal/license': typeof ZhLegalLicenseRoute
   '/zh/legal/privacy': typeof ZhLegalPrivacyRoute
@@ -115,13 +122,13 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/download': typeof DownloadRoute
-  '/zh': typeof ZhRouteWithChildren
   '/legal/disclaimer': typeof LegalDisclaimerRoute
   '/legal/license': typeof LegalLicenseRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
   '/zh/about': typeof ZhAboutRoute
   '/zh/download': typeof ZhDownloadRoute
+  '/zh': typeof ZhIndexRoute
   '/zh/legal/disclaimer': typeof ZhLegalDisclaimerRoute
   '/zh/legal/license': typeof ZhLegalLicenseRoute
   '/zh/legal/privacy': typeof ZhLegalPrivacyRoute
@@ -139,6 +146,7 @@ export interface FileRoutesById {
   '/legal/terms': typeof LegalTermsRoute
   '/zh/about': typeof ZhAboutRoute
   '/zh/download': typeof ZhDownloadRoute
+  '/zh/': typeof ZhIndexRoute
   '/zh/legal/disclaimer': typeof ZhLegalDisclaimerRoute
   '/zh/legal/license': typeof ZhLegalLicenseRoute
   '/zh/legal/privacy': typeof ZhLegalPrivacyRoute
@@ -157,6 +165,7 @@ export interface FileRouteTypes {
     | '/legal/terms'
     | '/zh/about'
     | '/zh/download'
+    | '/zh/'
     | '/zh/legal/disclaimer'
     | '/zh/legal/license'
     | '/zh/legal/privacy'
@@ -166,13 +175,13 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/download'
-    | '/zh'
     | '/legal/disclaimer'
     | '/legal/license'
     | '/legal/privacy'
     | '/legal/terms'
     | '/zh/about'
     | '/zh/download'
+    | '/zh'
     | '/zh/legal/disclaimer'
     | '/zh/legal/license'
     | '/zh/legal/privacy'
@@ -189,6 +198,7 @@ export interface FileRouteTypes {
     | '/legal/terms'
     | '/zh/about'
     | '/zh/download'
+    | '/zh/'
     | '/zh/legal/disclaimer'
     | '/zh/legal/license'
     | '/zh/legal/privacy'
@@ -235,6 +245,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/zh/': {
+      id: '/zh/'
+      path: '/'
+      fullPath: '/zh/'
+      preLoaderRoute: typeof ZhIndexRouteImport
+      parentRoute: typeof ZhRoute
     }
     '/zh/download': {
       id: '/zh/download'
@@ -312,6 +329,7 @@ declare module '@tanstack/react-router' {
 interface ZhRouteChildren {
   ZhAboutRoute: typeof ZhAboutRoute
   ZhDownloadRoute: typeof ZhDownloadRoute
+  ZhIndexRoute: typeof ZhIndexRoute
   ZhLegalDisclaimerRoute: typeof ZhLegalDisclaimerRoute
   ZhLegalLicenseRoute: typeof ZhLegalLicenseRoute
   ZhLegalPrivacyRoute: typeof ZhLegalPrivacyRoute
@@ -321,6 +339,7 @@ interface ZhRouteChildren {
 const ZhRouteChildren: ZhRouteChildren = {
   ZhAboutRoute: ZhAboutRoute,
   ZhDownloadRoute: ZhDownloadRoute,
+  ZhIndexRoute: ZhIndexRoute,
   ZhLegalDisclaimerRoute: ZhLegalDisclaimerRoute,
   ZhLegalLicenseRoute: ZhLegalLicenseRoute,
   ZhLegalPrivacyRoute: ZhLegalPrivacyRoute,
