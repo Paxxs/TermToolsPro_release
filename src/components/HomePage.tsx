@@ -172,6 +172,13 @@ const homeCopy = {
         role: "Open-source maintainer",
         initials: "LM",
       },
+      {
+        quote:
+          "For onboarding, replay files give new engineers a realistic terminal walkthrough without requiring a senior teammate to narrate every step live.",
+        name: "Ava Brooks",
+        role: "Engineering enablement manager",
+        initials: "AB",
+      },
     ],
     legacyTools: [
       {
@@ -309,6 +316,13 @@ const homeCopy = {
         name: "李默",
         role: "开源维护者",
         initials: "LM",
+      },
+      {
+        quote:
+          "做新人培训时，回放文件能还原真实终端流程，不需要资深同事每次都在线从头讲一遍。",
+        name: "许安",
+        role: "工程效能负责人",
+        initials: "XA",
       },
     ],
     legacyTools: [
