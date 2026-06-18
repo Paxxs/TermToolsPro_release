@@ -1,6 +1,7 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useRef, useState } from "react"
 
 type Theme = "light" | "dark"
+const DEFAULT_THEME: Theme = "light"
 
 interface ThemeContextType {
   theme: Theme
@@ -31,15 +32,24 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Initialize from stored value or system preference
-    return getStoredTheme() || getSystemTheme()
-  })
+  const [theme, setTheme] = useState<Theme>(DEFAULT_THEME)
+  const hasResolvedTheme = useRef(false)
 
-  // Apply theme on mount and when it changes
   useEffect(() => {
+    if (!hasResolvedTheme.current) return
     applyTheme(theme)
   }, [theme])
+
+  useEffect(() => {
+    const resolvedTheme = getStoredTheme() || getSystemTheme()
+
+    hasResolvedTheme.current = true
+    setTheme(resolvedTheme)
+
+    if (resolvedTheme === DEFAULT_THEME) {
+      applyTheme(resolvedTheme)
+    }
+  }, [])
 
   // Listen to system theme changes if no stored preference
   useEffect(() => {
