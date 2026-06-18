@@ -96,4 +96,24 @@ describe("home page", () => {
     expect(screen.getByText(/SuperPaxxs/)).toBeTruthy()
     expect(screen.getByRole("link", { name: "MorFans Dev" })).toBeTruthy()
   })
+
+  it("renders product-specific testimonials in English and Chinese", async () => {
+    render(<HomePage />)
+
+    expect(
+      screen.getByRole("heading", { name: "Trusted in real terminal work" })
+    ).toBeTruthy()
+    expect(screen.getByText(/SSH handoff reviews/i)).toBeTruthy()
+    expect(screen.getByText(/secrets from leaking/i)).toBeTruthy()
+
+    cleanup()
+    await i18n.changeLanguage("zh")
+    render(<HomePage />)
+
+    expect(
+      screen.getByRole("heading", { name: "真实终端工作中的用户反馈" })
+    ).toBeTruthy()
+    expect(screen.getByText(/SSH 交接复盘/)).toBeTruthy()
+    expect(screen.getByText(/隐藏临时 token/)).toBeTruthy()
+  })
 })

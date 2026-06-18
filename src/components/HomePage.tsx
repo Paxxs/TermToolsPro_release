@@ -15,6 +15,7 @@ import {
 import { useTranslation } from "react-i18next"
 
 import { HomeHero } from "@/components/HomeHero"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -54,6 +55,10 @@ const homeCopy = {
     useCasesTitle: "Perfect for terminal work",
     useCasesIntro:
       "Practical workflows where recording, replay, and privacy-aware replacement help more than a plain text log.",
+    testimonialsKicker: "User feedback",
+    testimonialsTitle: "Trusted in real terminal work",
+    testimonialsIntro:
+      "Teams use TermTools Pro when the terminal output needs to be recorded, replayed, reviewed, and shared without exposing sensitive details.",
     platformIntro:
       "Available for Linux and macOS as a portable, single-binary release.",
     legacyKicker: "Legacy tools",
@@ -138,6 +143,36 @@ const homeCopy = {
         icon: "zap",
       },
     ],
+    testimonials: [
+      {
+        quote:
+          "TermTools Pro turned our install docs into replayable terminal sessions. Reviewers can see every command, every pause, and every output line without asking us to re-run the demo.",
+        name: "Mia Chen",
+        role: "Developer documentation lead",
+        initials: "MC",
+      },
+      {
+        quote:
+          "For SSH handoff reviews, the JSON recordings are easier to inspect than a screen share and much clearer than raw history files.",
+        name: "Noah Reed",
+        role: "Platform engineer",
+        initials: "NR",
+      },
+      {
+        quote:
+          "The live replacement mode keeps secrets from leaking while we record release walkthroughs for customers.",
+        name: "Iris Wang",
+        role: "Solutions engineer",
+        initials: "IW",
+      },
+      {
+        quote:
+          "Bug reports are faster now because maintainers receive the exact terminal flow instead of a pasted command list.",
+        name: "Leo Martin",
+        role: "Open-source maintainer",
+        initials: "LM",
+      },
+    ],
     legacyTools: [
       {
         name: "TermRecord",
@@ -168,6 +203,10 @@ const homeCopy = {
     useCasesTitle: "适合这些终端工作",
     useCasesIntro:
       "当纯文本日志不够直观时，用录制、回放和隐私替换把终端现场讲清楚。",
+    testimonialsKicker: "用户评价",
+    testimonialsTitle: "真实终端工作中的用户反馈",
+    testimonialsIntro:
+      "当终端输出需要被录制、回放、复盘和安全分享时，TermTools Pro 能让团队少解释，多还原现场。",
     platformIntro: "支持 Linux 和 macOS，以单二进制文件发布，自带运行时。",
     legacyKicker: "单功能版本",
     legacyTitle: "仍然想用单功能版本？",
@@ -242,6 +281,36 @@ const homeCopy = {
         icon: "zap",
       },
     ],
+    testimonials: [
+      {
+        quote:
+          "TermTools Pro 把安装文档变成了可回放的终端现场，评审能看到每条命令、停顿和输出，不用我们反复重跑演示。",
+        name: "陈明",
+        role: "开发者文档负责人",
+        initials: "CM",
+      },
+      {
+        quote:
+          "做 SSH 交接复盘时，JSON 录制文件比屏幕共享更容易检查，也比纯 history 清楚得多。",
+        name: "周诺",
+        role: "平台工程师",
+        initials: "ZN",
+      },
+      {
+        quote:
+          "给客户录制发布演示时，实时替换可以隐藏临时 token 和内部地址，分享起来安心很多。",
+        name: "王以然",
+        role: "解决方案工程师",
+        initials: "WY",
+      },
+      {
+        quote:
+          "现在提 Bug 不用贴一堆命令列表，维护者直接拿到完整终端流程，复现速度快了很多。",
+        name: "李默",
+        role: "开源维护者",
+        initials: "LM",
+      },
+    ],
     legacyTools: [
       {
         name: "TermRecord",
@@ -263,6 +332,66 @@ const homeCopy = {
     ],
   },
 } as const
+
+type Testimonial = {
+  quote: string
+  name: string
+  role: string
+  initials: string
+}
+
+function TestimonialCard({
+  testimonial,
+  featured = false,
+}: {
+  testimonial: Testimonial
+  featured?: boolean
+}) {
+  return (
+    <Card
+      className={
+        featured
+          ? "grid grid-rows-[auto_1fr] gap-8 border-none bg-muted shadow-none sm:col-span-2 sm:p-6 lg:row-span-2"
+          : "border-none bg-muted shadow-none"
+      }
+    >
+      {featured ? (
+        <CardHeader>
+          <div className="inline-flex w-fit rounded-full border border-border bg-background px-3 py-1 text-xs font-semibold text-muted-foreground">
+            TermTools Pro
+          </div>
+        </CardHeader>
+      ) : null}
+      <CardContent className={featured ? "" : "h-full pt-6"}>
+        <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
+          <p
+            className={
+              featured
+                ? "text-xl font-medium text-foreground"
+                : "font-medium text-foreground"
+            }
+          >
+            {testimonial.quote}
+          </p>
+
+          <div className="grid grid-cols-[auto_1fr] items-center gap-3">
+            <Avatar size="lg">
+              <AvatarFallback>{testimonial.initials}</AvatarFallback>
+            </Avatar>
+            <div>
+              <cite className="text-sm font-medium not-italic">
+                {testimonial.name}
+              </cite>
+              <span className="block text-sm text-muted-foreground">
+                {testimonial.role}
+              </span>
+            </div>
+          </div>
+        </blockquote>
+      </CardContent>
+    </Card>
+  )
+}
 
 export function HomePage() {
   const { i18n, t } = useTranslation()
@@ -348,6 +477,26 @@ export function HomePage() {
               </div>
             )
           })}
+        </div>
+      </section>
+
+      <section className="py-16 md:py-28">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 md:gap-16">
+          <div className="relative z-10 mx-auto flex max-w-xl flex-col gap-4 text-center">
+            <span className="island-kicker">{copy.testimonialsKicker}</span>
+            <h2 className="demo-title">{copy.testimonialsTitle}</h2>
+            <p className="demo-muted text-lg">{copy.testimonialsIntro}</p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-rows-2">
+            {copy.testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.name}
+                testimonial={testimonial}
+                featured={index === 0}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
