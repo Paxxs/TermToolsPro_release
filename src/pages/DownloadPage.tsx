@@ -14,44 +14,44 @@ export function DownloadPage() {
 
   const platforms = [
     {
-      name: "Linux",
+      name: t("download.platforms.linux.name"),
       icon: Terminal,
+      version: t("download.platforms.linux.version"),
       downloads: [
-        { label: "Debian/Ubuntu (.deb)", link: "#" },
-        { label: "Red Hat/Fedora (.rpm)", link: "#" },
-        { label: "Arch Linux (AUR)", link: "#" },
-        { label: "AppImage (Universal)", link: "#" },
+        { label: t("download.platforms.linux.downloads.deb"), link: "#" },
+        { label: t("download.platforms.linux.downloads.rpm"), link: "#" },
+        { label: t("download.platforms.linux.downloads.aur"), link: "#" },
+        { label: t("download.platforms.linux.downloads.appimage"), link: "#" },
       ],
     },
     {
-      name: "macOS",
+      name: t("download.platforms.macos.name"),
       icon: Code,
+      version: t("download.platforms.macos.version"),
       downloads: [
-        { label: "Homebrew", link: "#" },
-        { label: "DMG Installer", link: "#" },
-        { label: "PKG Installer", link: "#" },
+        { label: t("download.platforms.macos.downloads.homebrew"), link: "#" },
+        { label: t("download.platforms.macos.downloads.dmg"), link: "#" },
+        { label: t("download.platforms.macos.downloads.pkg"), link: "#" },
       ],
     },
   ]
 
   const installSteps = [
     {
-      title: "Download the Package",
-      description: "Choose the appropriate package for your operating system",
+      title: t("download.installSteps.step1.title"),
+      description: t("download.installSteps.step1.description"),
     },
     {
-      title: "Install TermTools",
-      description: "Follow the platform-specific installation instructions",
+      title: t("download.installSteps.step2.title"),
+      description: t("download.installSteps.step2.description"),
     },
     {
-      title: "Verify Installation",
-      description:
-        "Run `termtools --version` to confirm successful installation",
+      title: t("download.installSteps.step3.title"),
+      description: t("download.installSteps.step3.description"),
     },
     {
-      title: "Start Recording",
-      description:
-        "Use `termtools record` to begin your first recording session",
+      title: t("download.installSteps.step4.title"),
+      description: t("download.installSteps.step4.description"),
     },
   ]
 
@@ -64,7 +64,7 @@ export function DownloadPage() {
           </div>
           <h1 className="demo-title mb-6">{t("download.title")}</h1>
           <p className="demo-muted mx-auto mb-12 max-w-2xl text-lg">
-            Choose your platform and start recording terminal sessions
+            {t("download.intro")}
           </p>
 
           <div className="grid gap-8 md:grid-cols-2">
@@ -80,9 +80,7 @@ export function DownloadPage() {
                   <CardTitle className="text-2xl text-[var(--sea-ink)]">
                     {platform.name}
                   </CardTitle>
-                  <CardDescription>
-                    Latest stable release: v1.0.0
-                  </CardDescription>
+                  <CardDescription>{platform.version}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
@@ -109,7 +107,7 @@ export function DownloadPage() {
           <div className="mb-12 text-center">
             <h2 className="demo-title mb-4">{t("download.install")}</h2>
             <p className="demo-muted text-lg">
-              Get started in four simple steps
+              {t("download.installSteps.subtitle")}
             </p>
           </div>
 
@@ -135,12 +133,12 @@ export function DownloadPage() {
       <section className="demo-page py-20">
         <div className="demo-panel mx-auto max-w-3xl">
           <h2 className="demo-section-title mb-4">
-            Quick Install via Package Manager
+            {t("download.quickInstall.title")}
           </h2>
           <div className="space-y-4">
             <div>
               <p className="demo-muted mb-2 text-sm font-semibold">
-                Homebrew (macOS)
+                {t("download.quickInstall.homebrew")}
               </p>
               <div className="demo-code-block font-mono text-sm">
                 <code>brew install termtools</code>
@@ -148,7 +146,7 @@ export function DownloadPage() {
             </div>
             <div>
               <p className="demo-muted mb-2 text-sm font-semibold">
-                APT (Debian/Ubuntu)
+                {t("download.quickInstall.apt")}
               </p>
               <div className="demo-code-block font-mono text-sm">
                 <code>sudo apt install termtools</code>
@@ -156,7 +154,7 @@ export function DownloadPage() {
             </div>
             <div>
               <p className="demo-muted mb-2 text-sm font-semibold">
-                DNF (Fedora)
+                {t("download.quickInstall.dnf")}
               </p>
               <div className="demo-code-block font-mono text-sm">
                 <code>sudo dnf install termtools</code>
@@ -167,7 +165,7 @@ export function DownloadPage() {
           <div className="mt-8 text-center">
             <Button className="demo-button gap-2">
               <Download className="h-5 w-5" />
-              Download Latest Release
+              {t("download.quickInstall.downloadButton")}
             </Button>
           </div>
         </div>

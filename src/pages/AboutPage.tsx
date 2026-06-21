@@ -14,42 +14,38 @@ export function AboutPage() {
   const timeline = [
     {
       year: "2023",
-      title: "Project Started",
-      description:
-        "Initial development began to address the need for better terminal recording",
+      title: t("about.timeline.events.2023.title"),
+      description: t("about.timeline.events.2023.description"),
     },
     {
       year: "2024",
-      title: "Beta Release",
-      description:
-        "First public beta released with core recording and playback features",
+      title: t("about.timeline.events.2024.title"),
+      description: t("about.timeline.events.2024.description"),
     },
     {
       year: "2025",
-      title: "v1.0 Launch",
-      description:
-        "Stable release with multi-format export and custom theme support",
+      title: t("about.timeline.events.2025.title"),
+      description: t("about.timeline.events.2025.description"),
     },
     {
       year: "2026",
-      title: "Community Growth",
-      description:
-        "Growing community with contributions from developers worldwide",
+      title: t("about.timeline.events.2026.title"),
+      description: t("about.timeline.events.2026.description"),
     },
   ]
 
   const team = [
     {
-      name: "Paxxs",
-      role: "Creator & Lead Developer",
+      name: t("about.team.members.creator.name"),
+      role: t("about.team.members.creator.role"),
       avatar: "👨‍💻",
-      description: "Passionate about developer tools and terminal workflows",
+      description: t("about.team.members.creator.description"),
     },
     {
-      name: "Contributors",
-      role: "Open Source Community",
+      name: t("about.team.members.contributors.name"),
+      role: t("about.team.members.contributors.role"),
       avatar: "🌟",
-      description: "Amazing developers contributing features and improvements",
+      description: t("about.team.members.contributors.description"),
     },
   ]
 
@@ -62,8 +58,7 @@ export function AboutPage() {
           </div>
           <h1 className="demo-title mb-6">{t("about.title")}</h1>
           <p className="demo-muted mx-auto max-w-2xl text-lg">
-            Building better tools for terminal recording and developer
-            productivity
+            {t("about.intro")}
           </p>
         </div>
       </section>
@@ -86,23 +81,29 @@ export function AboutPage() {
               <div className="mt-6 grid gap-4 md:grid-cols-3">
                 <div className="demo-card text-center">
                   <Heart className="mx-auto mb-3 h-8 w-8 text-[var(--lagoon-deep)]" />
-                  <h3 className="demo-section-title mb-1">Developer First</h3>
+                  <h3 className="demo-section-title mb-1">
+                    {t("about.values.developerFirst.title")}
+                  </h3>
                   <p className="demo-muted text-xs">
-                    Built by developers, for developers
+                    {t("about.values.developerFirst.description")}
                   </p>
                 </div>
                 <div className="demo-card text-center">
                   <Users className="mx-auto mb-3 h-8 w-8 text-[var(--lagoon-deep)]" />
-                  <h3 className="demo-section-title mb-1">Open Source</h3>
+                  <h3 className="demo-section-title mb-1">
+                    {t("about.values.openSource.title")}
+                  </h3>
                   <p className="demo-muted text-xs">
-                    Community-driven development
+                    {t("about.values.openSource.description")}
                   </p>
                 </div>
                 <div className="demo-card text-center">
                   <Target className="mx-auto mb-3 h-8 w-8 text-[var(--lagoon-deep)]" />
-                  <h3 className="demo-section-title mb-1">Quality Focus</h3>
+                  <h3 className="demo-section-title mb-1">
+                    {t("about.values.qualityFocus.title")}
+                  </h3>
                   <p className="demo-muted text-xs">
-                    High-quality output and UX
+                    {t("about.values.qualityFocus.description")}
                   </p>
                 </div>
               </div>
@@ -147,7 +148,9 @@ export function AboutPage() {
         <div className="mx-auto max-w-4xl">
           <div className="mb-12 text-center">
             <h2 className="demo-title mb-4">{t("about.timeline.title")}</h2>
-            <p className="demo-muted text-lg">Our journey so far</p>
+            <p className="demo-muted text-lg">
+              {t("about.timeline.subtitle")}
+            </p>
           </div>
 
           <div className="relative">
