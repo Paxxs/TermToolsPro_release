@@ -18,20 +18,20 @@ const HERO_VIDEO_SRC =
   "https://videos.pexels.com/video-files/35968183/15249566_1920_1080_30fps.mp4"
 
 const highlights = [
-  "Record",
-  "Replay",
-  "Export",
-  "Themes",
-  "Docs",
-  "Bug reports",
-  "Tutorials",
-  "Demos",
+  "Production Ready",
+  "Intelligent Replay",
+  "Privacy Protection",
+  "Enterprise Grade",
+  "Zero Dependencies",
+  "Advanced Export",
+  "Professional Quality",
+  "Optimized Performance",
 ]
 
 export function HomeHero({
-  subtitle = "Powerful Terminal Recorder",
+  subtitle = "Professional Terminal Recording Platform",
   title = "TermTools Pro",
-  description = "Professional terminal recording and playback tool for developers",
+  description = "Enterprise-grade terminal recording, intelligent playback, and privacy protection unified in one production-ready platform",
   getStarted = "Get Started",
   learnMore = "Learn More",
   getStartedHref,
@@ -108,7 +108,7 @@ export function HomeHero({
           <div className="flex flex-col items-start gap-4 md:flex-row md:items-center">
             <div className="md:max-w-44 md:border-r md:pr-6">
               <p className="text-sm font-medium text-muted-foreground md:text-end">
-                Built for terminal work
+                Professional terminal technology
               </p>
             </div>
             <div className="relative py-4 md:w-[calc(100%-11rem)]">

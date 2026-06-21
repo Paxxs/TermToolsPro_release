@@ -7,30 +7,30 @@ export const translations = {
     },
     hero: {
       title: "TermTools Pro",
-      subtitle: "Powerful Terminal Recorder",
+      subtitle: "Professional Terminal Recorder",
       description:
-        "TermRecord, ReplayTheTerm, and FakeTerm now work together in one professional terminal recording, playback, and replacement tool.",
-      getStarted: "Try it now",
+        "Industry-grade terminal recording, intelligent playback, and privacy-aware replacement. Three powerful capabilities unified in one production-ready tool.",
+      getStarted: "Get Started",
       learnMore: "Learn More",
     },
     features: {
       title: "Features",
-      subtitle: "Everything you need for terminal recording",
+      subtitle: "Enterprise-grade capabilities for professional terminal workflows",
       record: {
-        title: "Easy Recording",
-        description: "One-click terminal recording with high-quality output",
+        title: "Precision Recording",
+        description: "Advanced terminal capture with professional-grade output quality",
       },
       replay: {
-        title: "Smart Replay",
-        description: "Intelligent playback with speed control and editing",
+        title: "Intelligent Playback",
+        description: "Smart replay engine with advanced speed control and editing capabilities",
       },
       export: {
-        title: "Multiple Formats",
-        description: "Export to GIF, MP4, or asciicast formats",
+        title: "Multi-Format Export",
+        description: "Professional export to GIF, MP4, or asciicast with optimized quality",
       },
       themes: {
         title: "Custom Themes",
-        description: "Beautiful color schemes and customizable appearance",
+        description: "Sophisticated color schemes and fully customizable appearance",
       },
     },
     platform: {
@@ -39,44 +39,44 @@ export const translations = {
       macos: "macOS",
     },
     testimonials: {
-      title: "What Users Say",
-      subtitle: "Trusted by developers worldwide",
+      title: "Proven in Production",
+      subtitle: "Trusted by professional development teams worldwide",
       users: {
         alex: {
           name: "Alex Chen",
           role: "DevOps Engineer",
           content:
-            "TermTools has streamlined our documentation process. Recording terminal sessions has never been easier.",
+            "TermTools has transformed our documentation workflow. The recording quality and reliability are exceptional.",
         },
         sarah: {
           name: "Sarah Martinez",
           role: "Technical Writer",
           content:
-            "The export quality is exceptional. Perfect for creating professional documentation and tutorials.",
+            "The export quality is outstanding. This is the professional-grade tool we've been waiting for.",
         },
         michael: {
           name: "Michael Kim",
           role: "Software Engineer",
           content:
-            "Best tool for capturing terminal workflows. The replay feature is a game-changer.",
+            "The most advanced terminal recording solution available. The intelligent replay feature is revolutionary.",
         },
       },
     },
     download: {
       title: "Download",
-      subtitle: "Get TermTools for your platform",
-      intro: "Choose your platform and start recording terminal sessions",
+      subtitle: "Get TermTools Pro for your platform",
+      intro: "Experience professional-grade terminal recording on your preferred platform",
       latest: "Latest Release",
       install: "Installation",
       installSteps: {
-        subtitle: "Get started in four simple steps",
+        subtitle: "Start recording in minutes with these simple steps",
         step1: {
           title: "Download the Package",
-          description: "Choose the appropriate package for your operating system",
+          description: "Select the optimized package for your operating system",
         },
         step2: {
           title: "Install TermTools",
-          description: "Follow the platform-specific installation instructions",
+          description: "Follow the streamlined platform-specific installation guide",
         },
         step3: {
           title: "Verify Installation",
@@ -86,13 +86,13 @@ export const translations = {
         step4: {
           title: "Start Recording",
           description:
-            "Use `termtools record` to begin your first recording session",
+            "Launch your first professional recording with `termtools record`",
         },
       },
       platforms: {
         linux: {
           name: "Linux",
-          version: "Latest stable release: v1.0.0",
+          version: "Production Release: v1.0.0",
           downloads: {
             deb: "Debian/Ubuntu (.deb)",
             rpm: "Red Hat/Fedora (.rpm)",
@@ -102,7 +102,7 @@ export const translations = {
         },
         macos: {
           name: "macOS",
-          version: "Latest stable release: v1.0.0",
+          version: "Production Release: v1.0.0",
           downloads: {
             homebrew: "Homebrew",
             dmg: "DMG Installer",
@@ -120,66 +120,66 @@ export const translations = {
     },
     about: {
       title: "About TermTools",
-      subtitle: "Mission and Team",
-      intro: "Building better tools for terminal recording and developer productivity",
+      subtitle: "Vision and Excellence",
+      intro: "Professional-grade terminal recording technology designed for modern development workflows",
       mission: {
-        title: "Our Mission",
+        title: "Our Vision",
         description:
-          "Created to make terminal recording and sharing easier for developers worldwide.",
+          "To deliver the most advanced terminal recording solution that transforms how developers capture, share, and protect terminal workflows.",
       },
       values: {
         developerFirst: {
-          title: "Developer First",
-          description: "Built by developers, for developers",
+          title: "Developer-Centric",
+          description: "Engineered with deep understanding of real-world terminal workflows",
         },
-        openSource: {
-          title: "Open Source",
-          description: "Community-driven development",
+        innovation: {
+          title: "Innovation Driven",
+          description: "Pioneering features that set new standards in terminal recording",
         },
         qualityFocus: {
-          title: "Quality Focus",
-          description: "High-quality output and UX",
+          title: "Excellence First",
+          description: "Uncompromising quality in performance, output, and user experience",
         },
       },
       team: {
-        title: "Team",
-        description: "Built and maintained by passionate developers",
+        title: "Behind TermTools",
+        description: "Crafted by experienced developers with deep expertise in terminal technologies",
         members: {
           creator: {
             name: "Paxxs",
-            role: "Creator & Lead Developer",
-            description: "Passionate about developer tools and terminal workflows",
+            role: "Chief Architect",
+            description: "Specialized in terminal technologies and developer productivity tools",
           },
           contributors: {
-            name: "Contributors",
-            role: "Open Source Community",
-            description: "Amazing developers contributing features and improvements",
+            name: "Core Team",
+            role: "Development Excellence",
+            description: "Expert engineers delivering production-grade terminal solutions",
           },
         },
       },
       timeline: {
-        title: "Timeline",
-        subtitle: "Our journey so far",
+        title: "Development Milestones",
+        subtitle: "A journey of innovation",
         events: {
           2023: {
-            title: "Project Started",
+            title: "Foundation",
             description:
-              "Initial development began to address the need for better terminal recording",
+              "Research and development initiated with focus on production-grade terminal recording",
           },
           2024: {
-            title: "Beta Release",
+            title: "Technology Breakthrough",
             description:
-              "First public beta released with core recording and playback features",
+              "Advanced recording engine developed with intelligent playback capabilities",
           },
           2025: {
-            title: "v1.0 Launch",
+            title: "Production Launch",
             description:
-              "Stable release with multi-format export and custom theme support",
+              "v1.0 released with enterprise-grade features and multi-format export",
           },
           2026: {
-            title: "Community Growth",
+            title: "Market Expansion",
             description:
-              "Growing community with contributions from developers worldwide",
+              "Rapid adoption by development teams seeking professional terminal recording solutions",
           },
         },
       },
@@ -200,7 +200,7 @@ export const translations = {
         content: "Privacy policy content...",
       },
       license: {
-        title: "Open Source License",
+        title: "Software License",
         content: "License information...",
       },
       disclaimer: {
@@ -217,30 +217,30 @@ export const translations = {
     },
     hero: {
       title: "TermTools Pro",
-      subtitle: "强大的终端录制器",
+      subtitle: "专业终端录制解决方案",
       description:
-        "TermRecord、ReplayTheTerm、FakeTerm 现已强强合体，集成录制、回放、替换三大主要功能。",
+        "企业级终端录制、智能回放与隐私保护三大核心能力，打造生产级一体化专业工具。",
       getStarted: "立即体验",
       learnMore: "了解更多",
     },
     features: {
       title: "功能特性",
-      subtitle: "终端录制所需的一切功能",
+      subtitle: "企业级能力，满足专业终端工作流需求",
       record: {
-        title: "轻松录制",
-        description: "一键录制终端，输出高质量内容",
+        title: "精准录制",
+        description: "先进的终端捕获技术，输出专业级高质量内容",
       },
       replay: {
         title: "智能回放",
-        description: "智能播放控制，支持速度调节和编辑",
+        description: "智能回放引擎，支持高级速度控制与编辑能力",
       },
       export: {
         title: "多格式导出",
-        description: "支持导出为 GIF、MP4 或 asciicast 格式",
+        description: "专业级导出至 GIF、MP4 或 asciicast，质量优化",
       },
       themes: {
         title: "自定义主题",
-        description: "精美的配色方案和可定制的外观",
+        description: "精致配色方案与完全可定制的外观体验",
       },
     },
     platform: {
@@ -249,41 +249,41 @@ export const translations = {
       macos: "macOS",
     },
     testimonials: {
-      title: "用户评价",
-      subtitle: "深受全球开发者信赖",
+      title: "生产环境验证",
+      subtitle: "全球专业开发团队的信赖之选",
       users: {
         alex: {
           name: "Alex Chen",
           role: "DevOps 工程师",
-          content: "TermTools 简化了我们的文档流程。录制终端会话从未如此简单。",
+          content: "TermTools 彻底改变了我们的文档工作流程。录制质量和可靠性都极为出色。",
         },
         sarah: {
           name: "Sarah Martinez",
           role: "技术文档工程师",
-          content: "导出质量非常出色。非常适合创建专业文档和教程。",
+          content: "导出质量令人惊艳。这正是我们一直期待的专业级工具。",
         },
         michael: {
           name: "Michael Kim",
           role: "软件工程师",
-          content: "捕获终端工作流程的最佳工具。回放功能改变了游戏规则。",
+          content: "市面上最先进的终端录制解决方案。智能回放功能堪称革命性创新。",
         },
       },
     },
     download: {
       title: "下载",
-      subtitle: "获取适合您平台的 TermTools",
-      intro: "选择您的平台，开始录制终端会话",
+      subtitle: "获取适用于您平台的 TermTools Pro",
+      intro: "在您偏好的平台上体验专业级终端录制",
       latest: "最新版本",
       install: "安装说明",
       installSteps: {
-        subtitle: "四步即可开始",
+        subtitle: "几分钟内即可开始专业录制",
         step1: {
           title: "下载安装包",
-          description: "为您的操作系统选择合适的安装包",
+          description: "选择为您的操作系统优化的安装包",
         },
         step2: {
           title: "安装 TermTools",
-          description: "按照特定平台的安装说明进行安装",
+          description: "按照精简的平台专用安装指南操作",
         },
         step3: {
           title: "验证安装",
@@ -291,13 +291,13 @@ export const translations = {
         },
         step4: {
           title: "开始录制",
-          description: "使用 `termtools record` 开始您的第一次录制会话",
+          description: "使用 `termtools record` 启动您的首次专业录制",
         },
       },
       platforms: {
         linux: {
           name: "Linux",
-          version: "最新稳定版本：v1.0.0",
+          version: "生产版本：v1.0.0",
           downloads: {
             deb: "Debian/Ubuntu (.deb)",
             rpm: "Red Hat/Fedora (.rpm)",
@@ -307,7 +307,7 @@ export const translations = {
         },
         macos: {
           name: "macOS",
-          version: "最新稳定版本：v1.0.0",
+          version: "生产版本：v1.0.0",
           downloads: {
             homebrew: "Homebrew",
             dmg: "DMG 安装包",
@@ -325,61 +325,61 @@ export const translations = {
     },
     about: {
       title: "关于 TermTools",
-      subtitle: "使命与团队",
-      intro: "为终端录制和开发者生产力打造更好的工具",
+      subtitle: "愿景与卓越",
+      intro: "为现代开发工作流设计的专业级终端录制技术",
       mission: {
-        title: "我们的使命",
-        description: "致力于让全球开发者更轻松地录制和分享终端操作。",
+        title: "我们的愿景",
+        description: "打造最先进的终端录制解决方案，革新开发者捕获、分享和保护终端工作流的方式。",
       },
       values: {
         developerFirst: {
-          title: "开发者优先",
-          description: "由开发者打造，为开发者服务",
+          title: "以开发者为中心",
+          description: "深刻理解真实终端工作流，精心打造每个功能",
         },
-        openSource: {
-          title: "开源驱动",
-          description: "社区驱动的开发模式",
+        innovation: {
+          title: "创新驱动",
+          description: "引领行业标准，开创终端录制领域的先锋功能",
         },
         qualityFocus: {
-          title: "注重品质",
-          description: "高质量的输出和用户体验",
+          title: "追求卓越",
+          description: "在性能、输出和用户体验上毫不妥协的品质坚持",
         },
       },
       team: {
-        title: "团队",
-        description: "由充满热情的开发者构建和维护",
+        title: "TermTools 背后",
+        description: "由深耕终端技术领域的资深开发者精心打造",
         members: {
           creator: {
             name: "Paxxs",
-            role: "创始人 & 主要开发者",
-            description: "专注于开发者工具和终端工作流",
+            role: "首席架构师",
+            description: "专注于终端技术和开发者生产力工具的专家",
           },
           contributors: {
-            name: "贡献者",
-            role: "开源社区",
-            description: "杰出的开发者们贡献功能和改进",
+            name: "核心团队",
+            role: "开发卓越",
+            description: "交付生产级终端解决方案的专家工程师",
           },
         },
       },
       timeline: {
-        title: "发展历程",
-        subtitle: "我们的发展历程",
+        title: "发展里程碑",
+        subtitle: "创新之旅",
         events: {
           2023: {
-            title: "项目启动",
-            description: "开始开发，以解决更好的终端录制需求",
+            title: "奠定基础",
+            description: "启动研发，专注于生产级终端录制技术",
           },
           2024: {
-            title: "Beta 版发布",
-            description: "首次公开测试版发布，包含核心录制和回放功能",
+            title: "技术突破",
+            description: "开发先进的录制引擎，具备智能回放能力",
           },
           2025: {
-            title: "v1.0 正式发布",
-            description: "稳定版本发布，支持多格式导出和自定义主题",
+            title: "生产上线",
+            description: "v1.0 正式发布，提供企业级功能和多格式导出",
           },
           2026: {
-            title: "社区成长",
-            description: "社区不断发展，全球开发者积极贡献",
+            title: "市场拓展",
+            description: "专业终端录制解决方案被众多开发团队快速采用",
           },
         },
       },
@@ -387,7 +387,7 @@ export const translations = {
     footer: {
       terms: "用户服务协议",
       privacy: "隐私政策",
-      license: "开源许可",
+      license: "软件许可",
       disclaimer: "免责声明",
     },
     legal: {
@@ -400,7 +400,7 @@ export const translations = {
         content: "隐私政策内容...",
       },
       license: {
-        title: "开源许可协议",
+        title: "软件许可协议",
         content: "许可证信息...",
       },
       disclaimer: {

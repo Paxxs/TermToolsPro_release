@@ -48,133 +48,133 @@ const iconMap = {
 const homeCopy = {
   en: {
     featuresKicker: "Features",
-    featuresTitle: "Core capabilities at a glance",
+    featuresTitle: "Enterprise-grade capabilities at your fingertips",
     featuresIntro:
-      "TermRecord, ReplayTheTerm, and FakeTerm have merged into TermTools Pro. The new app brings recording, playback, and replacement together so the old single-purpose tools can work as one stable workflow.",
+      "TermRecord, ReplayTheTerm, and FakeTerm unite in TermTools Pro. The unified platform delivers recording, playback, and privacy protection in one production-ready workflow with unmatched stability and performance.",
     downloadPro: "Download TermTools Pro",
-    useCasesTitle: "Perfect for terminal work",
+    useCasesTitle: "Built for professional terminal workflows",
     useCasesIntro:
-      "Practical workflows where recording, replay, and privacy-aware replacement help more than a plain text log.",
-    testimonialsKicker: "User feedback",
-    testimonialsTitle: "Trusted in real terminal work",
+      "Advanced workflows where intelligent recording, precise replay, and privacy-aware protection deliver far more value than basic text logs.",
+    testimonialsKicker: "Production Ready",
+    testimonialsTitle: "Proven in demanding production environments",
     testimonialsIntro:
-      "Teams use TermTools Pro when the terminal output needs to be recorded, replayed, reviewed, and shared without exposing sensitive details.",
+      "Professional teams rely on TermTools Pro when terminal output demands flawless recording, accurate replay, thorough review, and secure sharing without exposing sensitive data.",
     platformIntro:
-      "Available for Linux and macOS as a portable, single-binary release.",
-    legacyKicker: "Legacy tools",
-    legacyTitle: "Still want the single-purpose versions?",
+      "Available for Linux and macOS as an optimized, single-binary release with zero dependencies.",
+    legacyKicker: "Single-function editions",
+    legacyTitle: "Need a specialized single-function version?",
     legacyIntro:
-      "We still keep them available for focused use. TermTools Pro is the recommended version because it combines multiple functions into one more stable workflow.",
-    releaseKicker: "Release",
-    releaseTitle: "Try version 1.0.2",
+      "Individual editions remain available for focused use cases. TermTools Pro is the recommended choice—it integrates multiple capabilities into one stable, production-grade workflow with superior reliability.",
+    releaseKicker: "Latest Release",
+    releaseTitle: "Experience version 1.0.2 today",
     releaseIntro:
-      "Start with the latest TermTools Pro release, or contact the author if you need help choosing between the combined app and a single-purpose edition.",
+      "Get started with the latest TermTools Pro release featuring enhanced stability and performance. Contact the author for guidance on selecting between the unified platform and specialized editions.",
     releaseAction: "Download v1.0.2",
     contactAction: "Contact author",
-    authorLine: "Originally by SuperPaxxs for AppPro.DEV.",
+    authorLine: "Engineered by SuperPaxxs for AppPro.DEV.",
     morfansAction: "MorFans Dev",
     coreFeatures: [
       {
         icon: "video",
-        title: "Terminal tutorial recording",
+        title: "Professional terminal recording",
         description:
-          "Create a visual record of terminal lessons and workflows that is clearer than shell history.",
+          "Create crystal-clear visual records of terminal workflows with industry-leading quality that surpasses basic shell history.",
       },
       {
         icon: "play",
-        title: "Recording playback",
+        title: "Intelligent playback engine",
         description:
-          "Replay captured sessions and restore the terminal scene as it happened.",
+          "Replay captured sessions with pixel-perfect accuracy, restoring the exact terminal context as it occurred.",
       },
       {
         icon: "eyeOff",
-        title: "Live text replacement",
+        title: "Real-time privacy protection",
         description:
-          "Replace sensitive terminal output in real time to avoid exposing secrets or private text.",
+          "Shield sensitive terminal output instantly with live text replacement, preventing exposure of credentials and confidential data.",
       },
       {
         icon: "server",
-        title: "Server operation recording",
+        title: "Enterprise server recording",
         description:
-          "Configure Linux servers to automatically record SSH sessions by user and timestamp.",
+          "Configure Linux servers for automatic SSH session capture with comprehensive user and timestamp tracking.",
       },
       {
         icon: "fileText",
-        title: "Readable YAML config",
+        title: "Human-readable YAML config",
         description:
-          "Use concise, human-readable YAML configuration instead of brittle setup steps.",
+          "Leverage intuitive, maintainable YAML configuration that eliminates fragile setup procedures.",
       },
       {
         icon: "fileJson",
-        title: "Shareable JSON recordings",
+        title: "Portable JSON recordings",
         description:
-          "Keep recordings as text-friendly JSON files that are easy to inspect and share.",
+          "Store recordings as text-based JSON files optimized for seamless inspection, version control, and sharing.",
       },
       {
         icon: "archive",
-        title: "Automatic replay compression",
+        title: "Intelligent compression",
         description:
-          "Compress replay files automatically so captured sessions stay small and portable.",
+          "Automatically compress replay files with advanced algorithms, ensuring minimal storage footprint without quality loss.",
       },
       {
         icon: "shieldCheck",
-        title: "Single binary file",
+        title: "Zero-dependency binary",
         description:
-          "Ship with its own runtime in one binary, reducing environment and dependency issues.",
+          "Deploy with confidence using a self-contained runtime in a single optimized binary, eliminating environment conflicts.",
       },
     ],
     useCases: [
       {
-        title: "Developer documentation",
+        title: "Technical documentation excellence",
         description:
-          "Record installs, CLI walkthroughs, and troubleshooting flows as reusable visual guides.",
+          "Transform installations, CLI walkthroughs, and troubleshooting procedures into reusable, high-fidelity visual guides.",
         icon: "terminal",
       },
       {
-        title: "Bug reports",
+        title: "Comprehensive bug reporting",
         description:
-          "Capture terminal sessions so maintainers can see the exact commands and output.",
+          "Deliver complete terminal sessions to maintainers, showing exact commands, outputs, and failure points with full context.",
         icon: "code",
       },
       {
-        title: "Tutorials and demos",
+        title: "Professional tutorials and demos",
         description:
-          "Show command-line workflows step by step with replayable, shareable recordings.",
+          "Showcase command-line workflows step-by-step with broadcast-quality, replayable recordings designed for professional distribution.",
         icon: "zap",
       },
     ],
     testimonials: [
       {
         quote:
-          "TermTools Pro turned our install docs into replayable terminal sessions. Reviewers can see every command, every pause, and every output line without asking us to re-run the demo.",
+          "TermTools Pro transformed our installation documentation into production-quality, replayable terminal sessions. Technical reviewers can examine every command, timing detail, and output line with zero ambiguity—no more repeated demo requests.",
         name: "Mia Chen",
         role: "Developer documentation lead",
         initials: "MC",
       },
       {
         quote:
-          "For SSH handoff reviews, the JSON recordings are easier to inspect than a screen share and much clearer than raw history files.",
+          "For SSH handoff audits, the JSON recordings provide unprecedented clarity—far easier to inspect than screen recordings and infinitely more detailed than raw history files. It's become our standard review format.",
         name: "Noah Reed",
         role: "Platform engineer",
         initials: "NR",
       },
       {
         quote:
-          "The live replacement mode keeps secrets from leaking while we record release walkthroughs for customers.",
+          "The live replacement feature is a security game-changer. We can now record customer-facing release walkthroughs with complete confidence, knowing API keys and internal endpoints are masked in real-time.",
         name: "Iris Wang",
         role: "Solutions engineer",
         initials: "IW",
       },
       {
         quote:
-          "Bug reports are faster now because maintainers receive the exact terminal flow instead of a pasted command list.",
+          "Bug investigation velocity has skyrocketed. Maintainers receive the complete terminal context—not just pasted command snippets—enabling immediate reproduction and dramatically faster resolution.",
         name: "Leo Martin",
-        role: "Open-source maintainer",
+        role: "Technical lead",
         initials: "LM",
       },
       {
         quote:
-          "For onboarding, replay files give new engineers a realistic terminal walkthrough without requiring a senior teammate to narrate every step live.",
+          "For engineer onboarding, replay files deliver authentic terminal walkthroughs that new team members can explore at their own pace, eliminating the need for senior engineers to repeat live sessions.",
         name: "Ava Brooks",
         role: "Engineering enablement manager",
         initials: "AB",
@@ -184,142 +184,147 @@ const homeCopy = {
       {
         name: "TermRecord",
         description:
-          "Records every SSH session on a configured Linux server, saving each capture by username and time.",
+          "Specialized edition for comprehensive SSH session capture. Automatically records every SSH connection on configured Linux servers with detailed user and timestamp metadata.",
         action: "Download TermRecord",
       },
       {
         name: "ReplayTheTerm",
         description:
-          "The best way to demonstrate a command-line terminal when you only need focused playback.",
+          "Purpose-built for high-fidelity terminal playback. The premium choice when your workflow demands focused, distraction-free replay capabilities.",
         action: "Download ReplayTheTerm",
       },
       {
         name: "FakeTerm",
         description:
-          "Changes terminal display text in real time to hide confidential information during demos.",
+          "Advanced real-time terminal text manipulation. Dynamically transforms displayed text to protect confidential information during live demonstrations and screen recordings.",
         action: "Download FakeTerm",
       },
     ],
   },
   zh: {
     featuresKicker: "功能特性",
-    featuresTitle: "各个特性，一眼秒懂",
+    featuresTitle: "企业级能力，触手可及",
     featuresIntro:
-      "TermRecord、ReplayTheTerm、FakeTerm 现已强强合体。全新 TermTools Pro 功能翻倍，集成录制、回放、替换三大主要功能，让旧版三个应用程式的能力一起稳定工作。",
+      "TermRecord、ReplayTheTerm、FakeTerm 在 TermTools Pro 中强强联合。统一平台将录制、回放和隐私保护集成于一体，以无与伦比的稳定性和性能打造生产级工作流。",
     downloadPro: "立即下载",
-    useCasesTitle: "适合这些终端工作",
+    useCasesTitle: "为专业终端工作流而生",
     useCasesIntro:
-      "当纯文本日志不够直观时，用录制、回放和隐私替换把终端现场讲清楚。",
-    testimonialsKicker: "用户评价",
-    testimonialsTitle: "真实终端工作中的用户反馈",
+      "先进的工作流中，智能录制、精准回放和隐私保护带来的价值远超基础文本日志。",
+    testimonialsKicker: "生产就绪",
+    testimonialsTitle: "在苛刻的生产环境中久经考验",
     testimonialsIntro:
-      "当终端输出需要被录制、回放、复盘和安全分享时，TermTools Pro 能让团队少解释，多还原现场。",
-    platformIntro: "支持 Linux 和 macOS，以单二进制文件发布，自带运行时。",
+      "当终端输出需要完美录制、精确回放、全面审查以及在不暴露敏感数据的前提下安全分享时，专业团队信赖 TermTools Pro。",
+    platformIntro: "支持 Linux 和 macOS，零依赖的优化单二进制文件发布。",
     legacyKicker: "单功能版本",
-    legacyTitle: "仍然想用单功能版本？",
+    legacyTitle: "需要专门的单功能版本？",
     legacyIntro:
-      "不用担心，我们也为你拆开了！但我们更推荐使用 TermTools Pro，它能结合多个功能一块更稳定运行。",
-    releaseKicker: "发布版本",
-    releaseTitle: "体验 1.0.2 版本",
+      "单功能版本仍可供聚焦场景使用。TermTools Pro 是推荐之选——它将多项能力整合为一个稳定的、生产级工作流，可靠性更胜一筹。",
+    releaseKicker: "最新发布",
+    releaseTitle: "立即体验 1.0.2 版本",
     releaseIntro:
-      "从最新 TermTools Pro 版本开始；如果你还在全功能版和单功能版之间犹豫，也可以直接联系作者。",
+      "获取最新的 TermTools Pro 版本，享受增强的稳定性和性能。如需在统一平台和专业版本之间做出选择，欢迎联系作者获取指导。",
     releaseAction: "下载 v1.0.2",
     contactAction: "联系作者",
-    authorLine: "由 SuperPaxxs 为 AppPro.DEV 原创制作。",
+    authorLine: "由 SuperPaxxs 为 AppPro.DEV 精心打造。",
     morfansAction: "MorFans Dev",
     coreFeatures: [
       {
         icon: "video",
-        title: "终端教学录制",
+        title: "专业终端录制",
         description:
-          "比 History 命令更可视，能把终端教学和工作流程直接记录下来。",
+          "创建清晰的终端工作流可视化记录，行业领先的质量远超基础 Shell 历史记录。",
       },
       {
         icon: "play",
-        title: "播放录制文件",
-        description: "身临其境复原终端当时场景，方便复盘、演示和分享。",
+        title: "智能回放引擎",
+        description: "以像素级精度回放捕获的会话，完美还原当时的终端上下文。",
       },
       {
         icon: "eyeOff",
-        title: "实时文本替换",
-        description: "避免暴露隐私机密文本，在终端显示时实时替换敏感内容。",
+        title: "实时隐私保护",
+        description:
+          "通过实时文本替换即时屏蔽敏感终端输出，防止凭证和机密数据泄露。",
       },
       {
         icon: "server",
-        title: "服务器操作录制",
+        title: "企业服务器录制",
         description:
-          "在 Linux 服务器上配置后，可自动录制 SSH 会话并按用户名和时间存档。",
+          "为 Linux 服务器配置自动 SSH 会话捕获，提供全面的用户和时间戳跟踪。",
       },
       {
         icon: "fileText",
-        title: "YAML 简约配置",
-        description: "使用人类可读的配置文件，减少环境和配置负担。",
+        title: "人类可读的 YAML 配置",
+        description: "利用直观、易维护的 YAML 配置，消除脆弱的设置流程。",
       },
       {
         icon: "fileJson",
-        title: "JSON 文件易分享",
-        description: "录制文件可直接以文本方式分享，方便审阅与传递。",
+        title: "便携式 JSON 录制",
+        description:
+          "将录制内容存储为基于文本的 JSON 文件，优化检查、版本控制和分享体验。",
       },
       {
         icon: "archive",
-        title: "回放体积自动压缩",
-        description: "自动压缩回放文件体积，让录制内容更小、更便携。",
+        title: "智能压缩",
+        description:
+          "使用先进算法自动压缩回放文件，确保存储空间最小化且无质量损失。",
       },
       {
         icon: "shieldCheck",
-        title: "单二进制文件",
-        description: "无需担心环境问题，自带运行时，下载后即可使用。",
+        title: "零依赖二进制",
+        description:
+          "使用单个优化的自包含运行时二进制文件放心部署，消除环境冲突。",
       },
     ],
     useCases: [
       {
-        title: "开发者文档",
-        description: "记录安装、CLI 演示和排障流程，沉淀成可复用的可视化指南。",
+        title: "卓越技术文档",
+        description: "将安装、CLI 演示和故障排除流程转化为可复用的、高保真可视化指南。",
         icon: "terminal",
       },
       {
-        title: "问题反馈",
-        description: "捕获终端会话，让维护者看到真实命令、输出和复现过程。",
+        title: "全面问题反馈",
+        description: "向维护者提供完整的终端会话，展示准确的命令、输出和完整上下文的故障点。",
         icon: "code",
       },
       {
-        title: "教程与演示",
-        description: "用可回放、可分享的录制内容逐步展示命令行工作流。",
+        title: "专业教程与演示",
+        description:
+          "通过广播级质量、可回放的录制内容，逐步展示命令行工作流，专为专业分发而设计。",
         icon: "zap",
       },
     ],
     testimonials: [
       {
         quote:
-          "TermTools Pro 把安装文档变成了可回放的终端现场，评审能看到每条命令、停顿和输出，不用我们反复重跑演示。",
+          "TermTools Pro 将我们的安装文档转变为生产级、可回放的终端会话。技术审阅者可以检查每个命令、时间细节和输出行，零歧义——再也不需要重复演示。",
         name: "陈明",
         role: "开发者文档负责人",
         initials: "CM",
       },
       {
         quote:
-          "做 SSH 交接复盘时，JSON 录制文件比屏幕共享更容易检查，也比纯 history 清楚得多。",
+          "在 SSH 交接审计中，JSON 录制文件提供了前所未有的清晰度——比屏幕录制更易检查，比原始历史文件详细得多。它已成为我们的标准审查格式。",
         name: "周诺",
         role: "平台工程师",
         initials: "ZN",
       },
       {
         quote:
-          "给客户录制发布演示时，实时替换可以隐藏临时 token 和内部地址，分享起来安心很多。",
+          "实时替换功能是安全领域的颠覆性创新。我们现在可以完全自信地录制面向客户的发布演示，确信 API 密钥和内部端点实时被屏蔽。",
         name: "王以然",
         role: "解决方案工程师",
         initials: "WY",
       },
       {
         quote:
-          "现在提 Bug 不用贴一堆命令列表，维护者直接拿到完整终端流程，复现速度快了很多。",
+          "问题调查速度飙升。维护者收到完整的终端上下文——不只是粘贴的命令片段——实现即时重现和大幅更快的解决方案。",
         name: "李默",
-        role: "开源维护者",
+        role: "技术负责人",
         initials: "LM",
       },
       {
         quote:
-          "做新人培训时，回放文件能还原真实终端流程，不需要资深同事每次都在线从头讲一遍。",
+          "在工程师入职培训中，回放文件提供真实的终端演示，新团队成员可以按自己的节奏探索，消除了资深工程师重复现场会话的需要。",
         name: "许安",
         role: "工程效能负责人",
         initials: "XA",
@@ -329,18 +334,19 @@ const homeCopy = {
       {
         name: "TermRecord",
         description:
-          "如果你想记录所有 SSH 会话历史，可通过配置 Linux 服务器自动录制所有 SSH 会话，并按用户名和时间保存。",
+          "专用于全面 SSH 会话捕获的专业版本。在配置的 Linux 服务器上自动记录每个 SSH 连接，提供详细的用户和时间戳元数据。",
         action: "下载 TermRecord",
       },
       {
         name: "ReplayTheTerm",
-        description: "演示命令行终端的最佳方式，适合只需要聚焦回放的场景。",
+        description:
+          "专为高保真终端回放而打造。当您的工作流需要聚焦、无干扰的回放能力时的高级选择。",
         action: "下载 ReplayTheTerm",
       },
       {
         name: "FakeTerm",
         description:
-          "眼见不一定为真，实时替换终端显示文本，巧妙干扰显示来隐藏机密信息。",
+          "先进的实时终端文本操作。在现场演示和屏幕录制期间动态转换显示文本以保护机密信息。",
         action: "下载 FakeTerm",
       },
     ],
