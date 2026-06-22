@@ -24,12 +24,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
-const RELEASE_URL = "https://github.com/Paxxs/TermToolsPro_release/releases/"
-const LATEST_RELEASE_URL =
-  "https://github.com/Paxxs/TermToolsPro_release/releases/tag/v1.0.2"
-const CONTACT_URL = "mailto:me@vip.morfans.cn"
-const MORFANS_URL = "https://www.morfans.cn"
+import { getLocalizedRoute } from "@/lib/i18n-routing"
+import type { Language } from "@/lib/i18n-routing"
 
 const iconMap = {
   archive: Archive,
@@ -48,9 +44,10 @@ const iconMap = {
 const homeCopy = {
   en: {
     featuresKicker: "Features",
-    featuresTitle: "Enterprise-grade capabilities at your fingertips",
+    featuresTitle:
+      "One terminal suite for recording, replay, and privacy protection",
     featuresIntro:
-      "TermRecord, ReplayTheTerm, and FakeTerm unite in TermTools Pro. The unified platform delivers recording, playback, and privacy protection in one production-ready workflow with unmatched stability and performance.",
+      "TermTools Pro brings TermRecord, ReplayTheTerm, and FakeTerm together in one professional terminal recording platform. Capture SSH sessions, replay command-line workflows, and mask sensitive output without switching between separate tools.",
     downloadPro: "Download TermTools Pro",
     useCasesTitle: "Built for professional terminal workflows",
     useCasesIntro:
@@ -62,17 +59,9 @@ const homeCopy = {
     platformIntro:
       "Available for Linux and macOS as an optimized, single-binary release with zero dependencies.",
     legacyKicker: "Single-function editions",
-    legacyTitle: "Need a specialized single-function version?",
+    legacyTitle: "All three original tools, now in one workflow",
     legacyIntro:
-      "Individual editions remain available for focused use cases. TermTools Pro is the recommended choice—it integrates multiple capabilities into one stable, production-grade workflow with superior reliability.",
-    releaseKicker: "Latest Release",
-    releaseTitle: "Experience version 1.0.2 today",
-    releaseIntro:
-      "Get started with the latest TermTools Pro release featuring enhanced stability and performance. Contact the author for guidance on selecting between the unified platform and specialized editions.",
-    releaseAction: "Download v1.0.2",
-    contactAction: "Contact author",
-    authorLine: "Engineered by SuperPaxxs for AppPro.DEV.",
-    morfansAction: "MorFans Dev",
+      "TermTools Pro unifies the original TermRecord, ReplayTheTerm, and FakeTerm capabilities into a single integrated terminal toolkit. Instead of maintaining separate single-purpose apps, teams get one zero-dependency binary for terminal recording, precise replay, live privacy masking, SSH session capture, JSON review, and shareable developer documentation.",
     coreFeatures: [
       {
         icon: "video",
@@ -184,29 +173,26 @@ const homeCopy = {
       {
         name: "TermRecord",
         description:
-          "Specialized edition for comprehensive SSH session capture. Automatically records every SSH connection on configured Linux servers with detailed user and timestamp metadata.",
-        action: "Download TermRecord",
+          "SSH session capture is now integrated into TermTools Pro, giving teams automated Linux server recording with user and timestamp context inside the same production workflow.",
       },
       {
         name: "ReplayTheTerm",
         description:
-          "Purpose-built for high-fidelity terminal playback. The premium choice when your workflow demands focused, distraction-free replay capabilities.",
-        action: "Download ReplayTheTerm",
+          "High-fidelity terminal playback is built into TermTools Pro, so recorded command-line workflows can be reviewed, shared, and replayed without a separate player.",
       },
       {
         name: "FakeTerm",
         description:
-          "Advanced real-time terminal text manipulation. Dynamically transforms displayed text to protect confidential information during live demonstrations and screen recordings.",
-        action: "Download FakeTerm",
+          "Real-time text replacement is included in TermTools Pro, helping demos, tutorials, and customer-facing sessions hide credentials and sensitive output as they appear.",
       },
     ],
   },
   zh: {
     featuresKicker: "功能特性",
-    featuresTitle: "企业级能力，触手可及",
+    featuresTitle: "一个终端套件，兼顾录制、回放与隐私保护",
     featuresIntro:
-      "TermRecord、ReplayTheTerm、FakeTerm 在 TermTools Pro 中强强联合。统一平台将录制、回放和隐私保护集成于一体，以无与伦比的稳定性和性能打造生产级工作流。",
-    downloadPro: "立即下载",
+      "TermTools Pro 将原来的 TermRecord、ReplayTheTerm、FakeTerm 整合为一款完整的终端录制平台。无需在多个工具之间切换，即可完成 SSH 会话捕获、命令行工作流回放与敏感输出实时隐藏。",
+    downloadPro: "立即下载 TermTools Pro",
     useCasesTitle: "为专业终端工作流而生",
     useCasesIntro:
       "先进的工作流中，智能录制、精准回放和隐私保护带来的价值远超基础文本日志。",
@@ -216,17 +202,9 @@ const homeCopy = {
       "当终端输出需要完美录制、精确回放、全面审查以及在不暴露敏感数据的前提下安全分享时，专业团队信赖 TermTools Pro。",
     platformIntro: "支持 Linux 和 macOS，零依赖的优化单二进制文件发布。",
     legacyKicker: "单功能版本",
-    legacyTitle: "需要专门的单功能版本？",
+    legacyTitle: "三项原子能力，现在合并成一个工作流",
     legacyIntro:
-      "单功能版本仍可供聚焦场景使用。TermTools Pro 是推荐之选——它将多项能力整合为一个稳定的、生产级工作流，可靠性更胜一筹。",
-    releaseKicker: "最新发布",
-    releaseTitle: "立即体验 1.0.2 版本",
-    releaseIntro:
-      "获取最新的 TermTools Pro 版本，享受增强的稳定性和性能。如需在统一平台和专业版本之间做出选择，欢迎联系作者获取指导。",
-    releaseAction: "下载 v1.0.2",
-    contactAction: "联系作者",
-    authorLine: "由 SuperPaxxs 为 AppPro.DEV 精心打造。",
-    morfansAction: "MorFans Dev",
+      "TermTools Pro 将 TermRecord、ReplayTheTerm、FakeTerm 的核心能力整合为一款一体化终端工具。一个零依赖二进制文件即可覆盖终端录制、精准回放、实时隐私替换、SSH 会话捕获、JSON 审阅与开发文档分享，让团队获得更完整、更稳定、更高效的生产级工作流。",
     coreFeatures: [
       {
         icon: "video",
@@ -278,12 +256,14 @@ const homeCopy = {
     useCases: [
       {
         title: "卓越技术文档",
-        description: "将安装、CLI 演示和故障排除流程转化为可复用的、高保真可视化指南。",
+        description:
+          "将安装、CLI 演示和故障排除流程转化为可复用的、高保真可视化指南。",
         icon: "terminal",
       },
       {
         title: "全面问题反馈",
-        description: "向维护者提供完整的终端会话，展示准确的命令、输出和完整上下文的故障点。",
+        description:
+          "向维护者提供完整的终端会话，展示准确的命令、输出和完整上下文的故障点。",
         icon: "code",
       },
       {
@@ -334,20 +314,17 @@ const homeCopy = {
       {
         name: "TermRecord",
         description:
-          "专用于全面 SSH 会话捕获的专业版本。在配置的 Linux 服务器上自动记录每个 SSH 连接，提供详细的用户和时间戳元数据。",
-        action: "下载 TermRecord",
+          "SSH 会话捕获已集成至 TermTools Pro，可在同一生产级工作流中完成 Linux 服务器自动录制、用户信息与时间戳记录。",
       },
       {
         name: "ReplayTheTerm",
         description:
-          "专为高保真终端回放而打造。当您的工作流需要聚焦、无干扰的回放能力时的高级选择。",
-        action: "下载 ReplayTheTerm",
+          "高保真终端回放已内置于 TermTools Pro，录制后的命令行工作流无需独立播放器即可审阅、分享与复现。",
       },
       {
         name: "FakeTerm",
         description:
-          "先进的实时终端文本操作。在现场演示和屏幕录制期间动态转换显示文本以保护机密信息。",
-        action: "下载 FakeTerm",
+          "实时文本替换已纳入 TermTools Pro，可在演示、教程和客户交付场景中即时隐藏凭证、密钥与敏感输出。",
       },
     ],
   },
@@ -415,7 +392,9 @@ function TestimonialCard({
 
 export function HomePage() {
   const { i18n, t } = useTranslation()
-  const copy = i18n.resolvedLanguage === "zh" ? homeCopy.zh : homeCopy.en
+  const language: Language = i18n.resolvedLanguage === "zh" ? "zh" : "en"
+  const copy = language === "zh" ? homeCopy.zh : homeCopy.en
+  const downloadHref = getLocalizedRoute("/download", language)
 
   return (
     <div className="min-h-screen">
@@ -425,7 +404,7 @@ export function HomePage() {
         description={t("hero.description")}
         getStarted={t("hero.getStarted")}
         learnMore={t("hero.learnMore")}
-        getStartedHref={LATEST_RELEASE_URL}
+        getStartedHref={downloadHref}
         learnMoreHref="#features"
       />
 
@@ -465,7 +444,7 @@ export function HomePage() {
         </div>
         <div className="mt-10 text-center">
           <Button asChild className="rounded-full">
-            <a href={RELEASE_URL}>
+            <a href={downloadHref}>
               <Download data-icon="inline-start" />
               {copy.downloadPro}
             </a>
@@ -569,42 +548,9 @@ export function HomePage() {
                 <CardDescription className="text-[var(--sea-ink-soft)]">
                   {tool.description}
                 </CardDescription>
-                <Button asChild variant="secondary" className="mt-auto">
-                  <a href={RELEASE_URL}>
-                    {tool.action}
-                    <Download data-icon="inline-end" />
-                  </a>
-                </Button>
               </CardContent>
             </Card>
           ))}
-        </div>
-      </section>
-
-      <section className="demo-page py-20">
-        <div className="demo-panel mx-auto max-w-3xl text-center">
-          <span className="island-kicker">{copy.releaseKicker}</span>
-          <h2 className="demo-title mt-3 mb-4">{copy.releaseTitle}</h2>
-          <p className="demo-muted mx-auto mb-8 max-w-2xl text-lg">
-            {copy.releaseIntro}
-          </p>
-          <p className="demo-muted mx-auto mb-6 max-w-2xl text-sm">
-            {copy.authorLine}
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Button asChild className="rounded-full">
-              <a href={LATEST_RELEASE_URL}>
-                <Download data-icon="inline-start" />
-                {copy.releaseAction}
-              </a>
-            </Button>
-            <Button asChild variant="outline" className="rounded-full">
-              <a href={CONTACT_URL}>{copy.contactAction}</a>
-            </Button>
-            <Button asChild variant="ghost" className="rounded-full">
-              <a href={MORFANS_URL}>{copy.morfansAction}</a>
-            </Button>
-          </div>
         </div>
       </section>
     </div>

@@ -66,21 +66,30 @@ export type SitemapEntry = {
 export const seoRoutes = {
   "/": {
     en: {
-      title: "TermTools Pro - Terminal Recording, Replay, and Demo Automation",
+      title: "TermTools Pro - Integrated Terminal Recording and Replay Suite",
       description:
-        "Record, replay, and polish terminal workflows with TermTools Pro, a developer tool for high-quality terminal demos, documentation, and tutorials.",
+        "TermTools Pro unifies terminal recording, precise replay, privacy masking, SSH session capture, and JSON review in one production-ready developer tool.",
       keywords: [
         "terminal recorder",
         "terminal replay",
+        "terminal privacy masking",
+        "SSH session recording",
         "developer documentation",
         "CLI demos",
       ],
     },
     zh: {
-      title: "TermTools Pro - 终端录制、回放与演示自动化工具",
+      title: "TermTools Pro - 一体化终端录制、回放与隐私保护套件",
       description:
-        "使用 TermTools Pro 录制、回放并优化终端工作流，为开发文档、教程和产品演示生成高质量终端内容。",
-      keywords: ["终端录制", "终端回放", "开发文档", "命令行演示"],
+        "TermTools Pro 将终端录制、精准回放、隐私替换、SSH 会话捕获与 JSON 审阅整合为一个生产级开发者工具。",
+      keywords: [
+        "终端录制",
+        "终端回放",
+        "终端隐私保护",
+        "SSH 会话录制",
+        "开发文档",
+        "命令行演示",
+      ],
     },
   },
   "/about": {
@@ -99,20 +108,26 @@ export const seoRoutes = {
   },
   "/download": {
     en: {
-      title: "Download TermTools Pro for macOS and Linux",
+      title: "Download TermTools Pro v1.0.2",
       description:
-        "Download TermTools Pro for macOS and Linux, then start recording terminal sessions, replaying workflows, and exporting developer-ready demos.",
+        "Download TermTools Pro v1.0.2 from GitHub Releases and get terminal recording, replay, privacy masking, SSH capture, and JSON review in one integrated tool.",
       keywords: [
         "download TermTools",
-        "macOS terminal recorder",
-        "Linux CLI recorder",
+        "TermTools Pro release",
+        "terminal recording suite",
+        "SSH session recorder",
       ],
     },
     zh: {
-      title: "下载适用于 macOS 和 Linux 的 TermTools Pro",
+      title: "下载 TermTools Pro v1.0.2",
       description:
-        "下载适用于 macOS 和 Linux 的 TermTools Pro，开始录制终端会话、回放工作流，并导出适合开发者文档的演示内容。",
-      keywords: ["下载 TermTools", "macOS 终端录制", "Linux 命令行录制"],
+        "从 GitHub Release 下载 TermTools Pro v1.0.2，在一个一体化工具中获得终端录制、回放、隐私替换、SSH 捕获与 JSON 审阅能力。",
+      keywords: [
+        "下载 TermTools",
+        "TermTools Pro 发布页",
+        "终端录制套件",
+        "SSH 会话录制",
+      ],
     },
   },
   "/legal/disclaimer": {

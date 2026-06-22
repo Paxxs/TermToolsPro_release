@@ -12,17 +12,6 @@ class ResizeObserverMock {
   disconnect() {}
 }
 
-const requiredFeatureTitles = [
-  "Terminal tutorial recording",
-  "Recording playback",
-  "Live text replacement",
-  "Server operation recording",
-  "Readable YAML config",
-  "Shareable JSON recordings",
-  "Automatic replay compression",
-  "Single binary file",
-]
-
 describe("home page", () => {
   beforeAll(() => {
     globalThis.ResizeObserver = ResizeObserverMock
@@ -33,87 +22,88 @@ describe("home page", () => {
     await i18n.changeLanguage("en")
   })
 
-  it("keeps the original TermTools Pro product story and legacy tool content", async () => {
+  it("routes homepage download calls to the localized download page", async () => {
     render(<HomePage />)
 
     expect(
-      (await screen.findAllByText(/TermRecord, ReplayTheTerm, and FakeTerm/))
-        .length
+      screen
+        .getByRole("link", { name: "Download TermTools Pro" })
+        .getAttribute("href")
     ).toBeTruthy()
     expect(
-      screen.getAllByText(/recording, playback, and replacement/).length
-    ).toBeTruthy()
-    expect(
-      screen.getByRole("heading", { name: "Core capabilities at a glance" })
-    ).toBeTruthy()
-
-    for (const title of requiredFeatureTitles) {
-      expect(screen.getByRole("heading", { name: title })).toBeTruthy()
-    }
+      screen
+        .getByRole("link", { name: "Download TermTools Pro" })
+        .getAttribute("href")
+    ).toBe("/download")
 
     const legacySection = screen.getByRole("region", {
-      name: "Still want the single-purpose versions?",
+      name: "All three original tools, now in one workflow",
     })
 
     expect(
-      within(legacySection).getByText(/We still keep them available/)
-    ).toBeTruthy()
-
-    for (const tool of ["TermRecord", "ReplayTheTerm", "FakeTerm"]) {
-      expect(
-        within(legacySection).getByRole("heading", { name: tool })
-      ).toBeTruthy()
-    }
-
-    expect(
-      within(legacySection).getByText(/records every SSH session/i)
-    ).toBeTruthy()
-    expect(
       within(legacySection).getByText(
-        /best way to demonstrate a command-line terminal/i
+        /TermTools Pro unifies the original TermRecord, ReplayTheTerm, and FakeTerm/
       )
     ).toBeTruthy()
+
     expect(
-      within(legacySection).getByText(/hide confidential information/i)
-    ).toBeTruthy()
+      within(legacySection).queryByRole("link", { name: /Download / })
+    ).toBeNull()
+
+    expect(screen.queryByRole("link", { name: "Download v1.0.2" })).toBeNull()
   })
 
-  it("renders the legacy Chinese product copy when Chinese is selected", async () => {
+  it("keeps homepage download links localized when Chinese is selected", async () => {
     await i18n.changeLanguage("zh")
 
     render(<HomePage />)
 
     expect(
-      screen.getAllByText(/TermRecord、ReplayTheTerm、FakeTerm/).length
-    ).toBeTruthy()
-    expect(screen.getAllByText(/录制、回放、替换/).length).toBeTruthy()
-    expect(
-      screen.getByRole("heading", { name: "各个特性，一眼秒懂" })
+      screen
+        .getByRole("link", { name: "立即下载 TermTools Pro" })
+        .getAttribute("href")
     ).toBeTruthy()
     expect(
-      screen.getByRole("heading", { name: "仍然想用单功能版本？" })
+      screen
+        .getByRole("link", { name: "立即下载 TermTools Pro" })
+        .getAttribute("href")
+    ).toBe("/zh/download")
+
+    expect(
+      screen.getByRole("region", {
+        name: "三项原子能力，现在合并成一个工作流",
+      })
     ).toBeTruthy()
-    expect(screen.getByText(/SuperPaxxs/)).toBeTruthy()
-    expect(screen.getByRole("link", { name: "MorFans Dev" })).toBeTruthy()
+    expect(screen.queryByRole("link", { name: /下载 TermRecord/ })).toBeNull()
   })
 
-  it("renders product-specific testimonials in English and Chinese", async () => {
+  it("renders the revised product story in English and Chinese", async () => {
     render(<HomePage />)
 
     expect(
-      screen.getByRole("heading", { name: "Trusted in real terminal work" })
+      screen.getByRole("heading", {
+        name: "One terminal suite for recording, replay, and privacy protection",
+      })
     ).toBeTruthy()
-    expect(screen.getByText(/SSH handoff reviews/i)).toBeTruthy()
-    expect(screen.getByText(/secrets from leaking/i)).toBeTruthy()
+    expect(
+      screen.getByText(
+        /TermTools Pro brings TermRecord, ReplayTheTerm, and FakeTerm together/
+      )
+    ).toBeTruthy()
 
     cleanup()
     await i18n.changeLanguage("zh")
     render(<HomePage />)
 
     expect(
-      screen.getByRole("heading", { name: "真实终端工作中的用户反馈" })
+      screen.getByRole("heading", {
+        name: "一个终端套件，兼顾录制、回放与隐私保护",
+      })
     ).toBeTruthy()
-    expect(screen.getByText(/SSH 交接复盘/)).toBeTruthy()
-    expect(screen.getByText(/隐藏临时 token/)).toBeTruthy()
+    expect(
+      screen.getByText(
+        /TermTools Pro 将原来的 TermRecord、ReplayTheTerm、FakeTerm 整合为一款完整的终端录制平台/
+      )
+    ).toBeTruthy()
   })
 })

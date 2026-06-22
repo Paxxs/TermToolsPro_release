@@ -65,15 +65,30 @@ describe("Chinese localized routes", () => {
     await renderRoute("/zh")
 
     expect(
-      await screen.findByRole("heading", { name: "各个特性，一眼秒懂" })
+      await screen.findByRole("heading", {
+        name: "一个终端套件，兼顾录制、回放与隐私保护",
+      })
     ).toBeTruthy()
   })
 
   it("renders the download page at /zh/download", async () => {
     await renderRoute("/zh/download")
 
-    expect(await screen.findByRole("heading", { name: "下载" })).toBeTruthy()
-    expect(screen.getByRole("heading", { name: "安装说明" })).toBeTruthy()
+    expect(
+      await screen.findByRole("heading", {
+        name: "下载 TermTools Pro v1.0.2",
+      })
+    ).toBeTruthy()
+    expect(
+      screen
+        .getByRole("link", {
+          name: "下载 v1.0.2",
+        })
+        .getAttribute("href")
+    ).toBe("https://github.com/Paxxs/TermToolsPro_release/releases/tag/v1.0.2")
+    expect(screen.queryByRole("heading", { name: "安装说明" })).toBeNull()
+    expect(screen.queryByRole("heading", { name: "Linux" })).toBeNull()
+    expect(screen.queryByRole("heading", { name: "macOS" })).toBeNull()
     expect(
       screen.queryByRole("heading", { name: "各个特性，一眼秒懂" })
     ).toBeNull()
@@ -85,9 +100,11 @@ describe("Chinese localized routes", () => {
     expect(
       await screen.findByRole("heading", { name: "关于 TermTools" })
     ).toBeTruthy()
-    expect(screen.getByText("我们的使命")).toBeTruthy()
+    expect(screen.getByText("我们的愿景")).toBeTruthy()
     expect(
-      screen.queryByRole("heading", { name: "各个特性，一眼秒懂" })
+      screen.queryByRole("heading", {
+        name: "一个终端套件，兼顾录制、回放与隐私保护",
+      })
     ).toBeNull()
   })
 
@@ -99,7 +116,9 @@ describe("Chinese localized routes", () => {
     ).toBeTruthy()
     expect(screen.getByText("Last updated: June 17, 2026")).toBeTruthy()
     expect(
-      screen.queryByRole("heading", { name: "各个特性，一眼秒懂" })
+      screen.queryByRole("heading", {
+        name: "一个终端套件，兼顾录制、回放与隐私保护",
+      })
     ).toBeNull()
   })
 })

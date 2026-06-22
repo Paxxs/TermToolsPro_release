@@ -68,7 +68,7 @@ describe("SEO helpers", () => {
     expect(head.meta).toContainEqual({
       name: "description",
       content:
-        "下载适用于 macOS 和 Linux 的 TermTools Pro，开始录制终端会话、回放工作流，并导出适合开发者文档的演示内容。",
+        "从 GitHub Release 下载 TermTools Pro v1.0.2，在一个一体化工具中获得终端录制、回放、隐私替换、SSH 捕获与 JSON 审阅能力。",
     })
     expect(head.meta).toContainEqual({
       property: "og:url",

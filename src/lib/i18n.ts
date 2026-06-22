@@ -15,22 +15,27 @@ export const translations = {
     },
     features: {
       title: "Features",
-      subtitle: "Enterprise-grade capabilities for professional terminal workflows",
+      subtitle:
+        "Enterprise-grade capabilities for professional terminal workflows",
       record: {
         title: "Precision Recording",
-        description: "Advanced terminal capture with professional-grade output quality",
+        description:
+          "Advanced terminal capture with professional-grade output quality",
       },
       replay: {
         title: "Intelligent Playback",
-        description: "Smart replay engine with advanced speed control and editing capabilities",
+        description:
+          "Smart replay engine with advanced speed control and editing capabilities",
       },
       export: {
         title: "Multi-Format Export",
-        description: "Professional export to GIF, MP4, or asciicast with optimized quality",
+        description:
+          "Professional export to GIF, MP4, or asciicast with optimized quality",
       },
       themes: {
         title: "Custom Themes",
-        description: "Sophisticated color schemes and fully customizable appearance",
+        description:
+          "Sophisticated color schemes and fully customizable appearance",
       },
     },
     platform: {
@@ -65,8 +70,17 @@ export const translations = {
     download: {
       title: "Download",
       subtitle: "Get TermTools Pro for your platform",
-      intro: "Experience professional-grade terminal recording on your preferred platform",
+      intro:
+        "Experience professional-grade terminal recording on your preferred platform",
       latest: "Latest Release",
+      release: {
+        kicker: "Latest Release",
+        title: "Download TermTools Pro v1.0.2",
+        intro:
+          "Get the integrated TermTools Pro release for terminal recording, precise replay, real-time privacy masking, SSH session capture, and shareable JSON reviews in one zero-dependency tool.",
+        authorLine: "Engineered by SuperPaxxs for AppPro.DEV.",
+        action: "Download v1.0.2",
+      },
       install: "Installation",
       installSteps: {
         subtitle: "Start recording in minutes with these simple steps",
@@ -76,7 +90,8 @@ export const translations = {
         },
         step2: {
           title: "Install TermTools",
-          description: "Follow the streamlined platform-specific installation guide",
+          description:
+            "Follow the streamlined platform-specific installation guide",
         },
         step3: {
           title: "Verify Installation",
@@ -121,7 +136,8 @@ export const translations = {
     about: {
       title: "About TermTools",
       subtitle: "Vision and Excellence",
-      intro: "Professional-grade terminal recording technology designed for modern development workflows",
+      intro:
+        "Professional-grade terminal recording technology designed for modern development workflows",
       mission: {
         title: "Our Vision",
         description:
@@ -130,30 +146,36 @@ export const translations = {
       values: {
         developerFirst: {
           title: "Developer-Centric",
-          description: "Engineered with deep understanding of real-world terminal workflows",
+          description:
+            "Engineered with deep understanding of real-world terminal workflows",
         },
         innovation: {
           title: "Innovation Driven",
-          description: "Pioneering features that set new standards in terminal recording",
+          description:
+            "Pioneering features that set new standards in terminal recording",
         },
         qualityFocus: {
           title: "Excellence First",
-          description: "Uncompromising quality in performance, output, and user experience",
+          description:
+            "Uncompromising quality in performance, output, and user experience",
         },
       },
       team: {
         title: "Behind TermTools",
-        description: "Crafted by experienced developers with deep expertise in terminal technologies",
+        description:
+          "Crafted by experienced developers with deep expertise in terminal technologies",
         members: {
           creator: {
             name: "Paxxs",
             role: "Chief Architect",
-            description: "Specialized in terminal technologies and developer productivity tools",
+            description:
+              "Specialized in terminal technologies and developer productivity tools",
           },
           contributors: {
             name: "Core Team",
             role: "Development Excellence",
-            description: "Expert engineers delivering production-grade terminal solutions",
+            description:
+              "Expert engineers delivering production-grade terminal solutions",
           },
         },
       },
@@ -255,7 +277,8 @@ export const translations = {
         alex: {
           name: "Alex Chen",
           role: "DevOps 工程师",
-          content: "TermTools 彻底改变了我们的文档工作流程。录制质量和可靠性都极为出色。",
+          content:
+            "TermTools 彻底改变了我们的文档工作流程。录制质量和可靠性都极为出色。",
         },
         sarah: {
           name: "Sarah Martinez",
@@ -265,7 +288,8 @@ export const translations = {
         michael: {
           name: "Michael Kim",
           role: "软件工程师",
-          content: "市面上最先进的终端录制解决方案。智能回放功能堪称革命性创新。",
+          content:
+            "市面上最先进的终端录制解决方案。智能回放功能堪称革命性创新。",
         },
       },
     },
@@ -274,6 +298,14 @@ export const translations = {
       subtitle: "获取适用于您平台的 TermTools Pro",
       intro: "在您偏好的平台上体验专业级终端录制",
       latest: "最新版本",
+      release: {
+        kicker: "最新发布",
+        title: "下载 TermTools Pro v1.0.2",
+        intro:
+          "获取一体化 TermTools Pro 版本，在一个零依赖工具中完成终端录制、精准回放、实时隐私替换、SSH 会话捕获与可分享 JSON 审阅。",
+        authorLine: "由 SuperPaxxs 为 AppPro.DEV 精心打造。",
+        action: "下载 v1.0.2",
+      },
       install: "安装说明",
       installSteps: {
         subtitle: "几分钟内即可开始专业录制",
@@ -329,7 +361,8 @@ export const translations = {
       intro: "为现代开发工作流设计的专业级终端录制技术",
       mission: {
         title: "我们的愿景",
-        description: "打造最先进的终端录制解决方案，革新开发者捕获、分享和保护终端工作流的方式。",
+        description:
+          "打造最先进的终端录制解决方案，革新开发者捕获、分享和保护终端工作流的方式。",
       },
       values: {
         developerFirst: {
