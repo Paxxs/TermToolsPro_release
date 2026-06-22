@@ -42,10 +42,10 @@ export function AboutPage() {
       description: t("about.team.members.creator.description"),
     },
     {
-      name: t("about.team.members.contributors.name"),
-      role: t("about.team.members.contributors.role"),
+      name: t("about.team.members.productFocus.name"),
+      role: t("about.team.members.productFocus.role"),
       avatar: "🌟",
-      description: t("about.team.members.contributors.description"),
+      description: t("about.team.members.productFocus.description"),
     },
   ]
 
@@ -91,10 +91,10 @@ export function AboutPage() {
                 <div className="demo-card text-center">
                   <Users className="mx-auto mb-3 h-8 w-8 text-[var(--lagoon-deep)]" />
                   <h3 className="demo-section-title mb-1">
-                    {t("about.values.openSource.title")}
+                    {t("about.values.practicalWorkflow.title")}
                   </h3>
                   <p className="demo-muted text-xs">
-                    {t("about.values.openSource.description")}
+                    {t("about.values.practicalWorkflow.description")}
                   </p>
                 </div>
                 <div className="demo-card text-center">

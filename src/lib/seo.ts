@@ -96,14 +96,18 @@ export const seoRoutes = {
     en: {
       title: "About TermTools Pro",
       description:
-        "Learn about TermTools Pro, the open source terminal recording toolkit built for developers, technical writers, and teams that document command-line workflows.",
-      keywords: ["TermTools team", "open source terminal tools"],
+        "Learn about TermTools Pro, a terminal recording and replay tool for documenting command-line workflows with privacy masking and export support.",
+      keywords: [
+        "TermTools Pro",
+        "terminal recording workflow",
+        "terminal privacy masking",
+      ],
     },
     zh: {
       title: "关于 TermTools Pro",
       description:
-        "了解 TermTools Pro，这是一套为开发者、技术写作者和团队打造的开源终端录制工具。",
-      keywords: ["TermTools 团队", "开源终端工具"],
+        "了解 TermTools Pro，一个用于记录、回放和整理命令行工作流的终端工具，支持隐私替换与导出。",
+      keywords: ["TermTools Pro", "终端录制工作流", "终端隐私替换"],
     },
   },
   "/download": {

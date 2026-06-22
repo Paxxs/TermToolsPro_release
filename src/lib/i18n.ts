@@ -135,73 +135,73 @@ export const translations = {
     },
     about: {
       title: "About TermTools",
-      subtitle: "Vision and Excellence",
+      subtitle: "Built for practical terminal work",
       intro:
-        "Professional-grade terminal recording technology designed for modern development workflows",
+        "TermTools helps record terminal sessions, replay them accurately, and mask sensitive output before sharing.",
       mission: {
-        title: "Our Vision",
+        title: "What we're building",
         description:
-          "To deliver the most advanced terminal recording solution that transforms how developers capture, share, and protect terminal workflows.",
+          "TermTools is meant to make terminal workflows easier to document without turning each recording into a manual editing job. The focus is reliable capture, readable playback, and privacy controls that stay close to the local workflow.",
       },
       values: {
         developerFirst: {
-          title: "Developer-Centric",
+          title: "Fits real workflows",
           description:
-            "Engineered with deep understanding of real-world terminal workflows",
+            "Designed around everyday recording, review, and export tasks.",
         },
-        innovation: {
-          title: "Innovation Driven",
+        practicalWorkflow: {
+          title: "Clear by default",
           description:
-            "Pioneering features that set new standards in terminal recording",
+            "Recordings should be easy to replay, inspect, and share without extra ceremony.",
         },
         qualityFocus: {
-          title: "Excellence First",
+          title: "Careful with details",
           description:
-            "Uncompromising quality in performance, output, and user experience",
+            "Performance, output formats, and privacy masking are treated as core product work.",
         },
       },
       team: {
-        title: "Behind TermTools",
+        title: "Who maintains TermTools",
         description:
-          "Crafted by experienced developers with deep expertise in terminal technologies",
+          "TermTools is built around practical developer documentation needs, with small, steady improvements over time.",
         members: {
           creator: {
             name: "Paxxs",
-            role: "Chief Architect",
+            role: "Maintainer",
             description:
-              "Specialized in terminal technologies and developer productivity tools",
+              "Builds and maintains TermTools with a focus on recording, replay, packaging, and privacy masking.",
           },
-          contributors: {
-            name: "Core Team",
-            role: "Development Excellence",
+          productFocus: {
+            name: "Product priorities",
+            role: "Recording and privacy",
             description:
-              "Expert engineers delivering production-grade terminal solutions",
+              "The roadmap stays close to common terminal needs: demos, docs, debugging notes, exports, and safer sharing.",
           },
         },
       },
       timeline: {
-        title: "Development Milestones",
-        subtitle: "A journey of innovation",
+        title: "How it has developed",
+        subtitle: "Steady, practical milestones",
         events: {
           2023: {
-            title: "Foundation",
+            title: "Initial experiments",
             description:
-              "Research and development initiated with focus on production-grade terminal recording",
+              "Started with terminal recording prototypes and tests around replay fidelity.",
           },
           2024: {
-            title: "Technology Breakthrough",
+            title: "Recording and replay",
             description:
-              "Advanced recording engine developed with intelligent playback capabilities",
+              "Improved capture, playback, and export paths for repeatable command-line demos.",
           },
           2025: {
-            title: "Production Launch",
+            title: "Packaged release",
             description:
-              "v1.0 released with enterprise-grade features and multi-format export",
+              "Published v1.0 with recording, replay, privacy masking, SSH capture, and JSON review in one tool.",
           },
           2026: {
-            title: "Market Expansion",
+            title: "Practical polish",
             description:
-              "Rapid adoption by development teams seeking professional terminal recording solutions",
+              "Continued work on packaging, docs, and workflow details based on day-to-day use.",
           },
         },
       },
@@ -357,62 +357,65 @@ export const translations = {
     },
     about: {
       title: "关于 TermTools",
-      subtitle: "愿景与卓越",
-      intro: "为现代开发工作流设计的专业级终端录制技术",
+      subtitle: "面向实际终端工作的工具",
+      intro: "TermTools 用来录制终端会话、准确回放，并在分享前处理敏感输出。",
       mission: {
-        title: "我们的愿景",
+        title: "我们在做什么",
         description:
-          "打造最先进的终端录制解决方案，革新开发者捕获、分享和保护终端工作流的方式。",
+          "TermTools 的目标是让终端工作流更容易被记录和整理，而不是把每次录制都变成手工剪辑。重点放在稳定捕获、清晰回放，以及贴近本地工作流的隐私处理上。",
       },
       values: {
         developerFirst: {
-          title: "以开发者为中心",
-          description: "深刻理解真实终端工作流，精心打造每个功能",
+          title: "贴近日常流程",
+          description: "围绕录制、审阅、导出这些真实任务设计。",
         },
-        innovation: {
-          title: "创新驱动",
-          description: "引领行业标准，开创终端录制领域的先锋功能",
+        practicalWorkflow: {
+          title: "清晰可用",
+          description: "录制结果应该便于回放、检查和分享，不需要额外复杂步骤。",
         },
         qualityFocus: {
-          title: "追求卓越",
-          description: "在性能、输出和用户体验上毫不妥协的品质坚持",
+          title: "重视细节",
+          description: "性能、输出格式和隐私替换都作为核心体验来打磨。",
         },
       },
       team: {
-        title: "TermTools 背后",
-        description: "由深耕终端技术领域的资深开发者精心打造",
+        title: "谁在维护 TermTools",
+        description:
+          "TermTools 围绕开发文档和命令行演示的实际需求迭代，保持小步、稳定的改进。",
         members: {
           creator: {
             name: "Paxxs",
-            role: "首席架构师",
-            description: "专注于终端技术和开发者生产力工具的专家",
+            role: "维护者",
+            description: "负责录制、回放、打包和隐私替换等日常维护。",
           },
-          contributors: {
-            name: "核心团队",
-            role: "开发卓越",
-            description: "交付生产级终端解决方案的专家工程师",
+          productFocus: {
+            name: "产品重点",
+            role: "录制与隐私",
+            description:
+              "优先级来自常见终端场景：演示、文档、排查记录、导出片段和安全分享。",
           },
         },
       },
       timeline: {
-        title: "发展里程碑",
-        subtitle: "创新之旅",
+        title: "它是怎么发展过来的",
+        subtitle: "小步推进的实用节点",
         events: {
           2023: {
-            title: "奠定基础",
-            description: "启动研发，专注于生产级终端录制技术",
+            title: "早期实验",
+            description: "从终端录制原型开始，重点验证回放是否足够稳定。",
           },
           2024: {
-            title: "技术突破",
-            description: "开发先进的录制引擎，具备智能回放能力",
+            title: "录制与回放",
+            description: "改进捕获、回放和导出流程，让命令行演示更容易复现。",
           },
           2025: {
-            title: "生产上线",
-            description: "v1.0 正式发布，提供企业级功能和多格式导出",
+            title: "打包发布",
+            description:
+              "发布 v1.0，将录制、回放、隐私替换、SSH 捕获和 JSON 审阅整合到一个工具里。",
           },
           2026: {
-            title: "市场拓展",
-            description: "专业终端录制解决方案被众多开发团队快速采用",
+            title: "继续打磨",
+            description: "继续完善打包、文档和日常工作流里的细节。",
           },
         },
       },
